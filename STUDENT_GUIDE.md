@@ -7,3 +7,7 @@
 احتفظ بإصدارات الملفات وتاريخ التشغيل. لا تُضمّن معلومات شخصية أو أسرارًا. إذا استخدمت ملفات الاستعادة (Recovery)، اذكر مصدرها وما أعدت تشغيله بنفسك.
 
 Daily routine: read the goal, run the released lab, save artefacts, and explain your decision. Keep results honest. A documented single-model decision is valid when ensembling offers no convincing benefit.
+
+## ابدأ اليوم الأول
+
+افتح [دليل خط الأساس والتعزيز](DAY1_GUIDE.md)، وشغّل ثلاثة نماذج على التقسيم نفسه. اكتب مرشحًا أوليًا مع دليل وقيد وتجربة تالية، واحفظ CSV والرسوم وملاحظاتك. فصل الإيقاف المبكر عن المقارنة خطوة ضرورية؛ التقسيم العشوائي نفسه سيخضع للمراجعة في اليوم الثاني.
