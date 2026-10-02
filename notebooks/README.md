@@ -1,5 +1,9 @@
-# تطبيقاتك
+# دفاتر تطبيقك
 
-احفظ هنا نسخ Notebooks الخاصة بك بعد فتح الرابط المعتمد لكل يوم. اختر CPU واحفظ المخرجات الفعلية. ستعلن المدربة روابط التطبيقات مع أيام الدورة.
+| الدفتر | ما تنجزه | افتحه |
+|---|---|---|
+| 00 — الاستعداد | البيئة والبيانات وستة أسئلة للمراجعة وحفظ المخرجات | [Colab](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/00_readiness_check.ipynb) · [GitHub](00_readiness_check.ipynb) |
 
-Keep your own notebook copies here and record your reasoning alongside actual outputs.
+اقرأ [دليل الاستعداد](../READINESS_GUIDE.md). احفظ نسختك في هذا المجلد ومخرجاتك في `artifacts/`. ستضاف تطبيقات الأيام الخمسة عند إتاحتها.
+
+Open Notebook 00, use a free CPU runtime, and save your own copy and actual outputs.
