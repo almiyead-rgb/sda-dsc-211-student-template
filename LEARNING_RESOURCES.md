@@ -110,3 +110,5 @@ Review stacking, then examine OOF predictions and honest validation in day 5. En
 | Stacking وOOF | [StackingClassifier](https://scikit-learn.org/1.6/modules/generated/sklearn.ensemble.StackingClassifier.html) و[دليل اليوم الخامس](DAY5_GUIDE.md) |
 
 مراجع LightGBM وبعض خطوات المتصفح نصية رسمية؛ لم نضع فيديو بديلًا غير متحقق منه لمجرد ملء القائمة. لا تنسخ أمثلة المراجع كتفسير لنتائج مشروعك.
+
+فحص الروابط الدوري يعرض `PASS` عندما يثبت الإتاحة، و`METADATA_ONLY` عندما تؤكد خدمة YouTube العامة عنوان الفيديو وقناته لكن لا تؤكد تشغيله من خوادم الفحص. `UNVERIFIED` يحتاج مراجعة، و`BROKEN` يعني رابطًا غير موجود. لا تغير هذه الحالات درجات مشروعك.
