@@ -2,6 +2,11 @@
 
 **SDA-DSC-211 · Tamweel Lite**
 
+[![Environment Check](https://github.com/almiyead-rgb/sda-dsc-211-student-template/actions/workflows/validate.yml/badge.svg)](https://github.com/almiyead-rgb/sda-dsc-211-student-template/actions/workflows/validate.yml) [![Notebook Smoke Test](https://github.com/almiyead-rgb/sda-dsc-211-student-template/actions/workflows/notebook_smoke.yml/badge.svg)](https://github.com/almiyead-rgb/sda-dsc-211-student-template/actions/workflows/notebook_smoke.yml)
+
+هذان المؤشران لصحة القالب؛ راجع تشغيل الفحص في مستودعك لتقييم جاهزية ملفاتك.
+
+
 استخدم هذا القالب لتنظيم تطبيقاتك وأدلتك طوال الدورة. اختر **Use this template → Create a new repository** لتبدأ نسخة تخص مشروعك، ثم افتح [ابدأ هنا](START_HERE.md).
 
 [بوابة التعلم](https://almiyead-rgb.github.io/advanced-machine-learning-methods-sda-dsc-211/) · [English portal](https://almiyead-rgb.github.io/advanced-machine-learning-methods-sda-dsc-211/en.html)
@@ -31,3 +36,7 @@
 لا تضع بيانات شخصية أو أسرارًا أو درجات في هذا المستودع العام. تعلن المدربة قناة التسليم الخاصة.
 
 Prepared and delivered by **ميعاد المري | Meaad Al-Marri** · [حقوق النسبة](NOTICE.md).
+
+## افحص النسخة النهائية
+
+افتح [دليل الفحص النهائي](FINAL_CHECK_GUIDE.md) ثم [دفتر99 المجاني](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/99_final_submission_check.ipynb). أكمل ملفاتك وإجاباتك، وشغّل الفحص، ثم ارفع manifest مع الملفات الفعلية وسجل SHA/tag المطابقين بعد آخر commit. نجاح الفحص ليس درجة أو إيصال استلام؛ قناة التسليم والموعد تعلنهما المدربة.

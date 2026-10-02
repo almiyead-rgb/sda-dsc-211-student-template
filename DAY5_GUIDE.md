@@ -78,3 +78,7 @@ rebuild(ROOT)  # يعيد التدريب والاختيار والمعايرة �
 ## English checkpoint
 
 Use nested forward OOF for the stack, choose complexity only when evidence supports it, and keep calibration customers separate. Report calibration-fit diagnostics honestly. Export every challenge ID, apply the capacity policy once to the full batch, and merge your own earlier evidence. Checksums and file presence are not grades or submission receipts.
+
+## افحص النسخة النهائية
+
+افتح [دليل الفحص النهائي](FINAL_CHECK_GUIDE.md) ثم [دفتر99 المجاني](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/99_final_submission_check.ipynb). أكمل ملفاتك وإجاباتك، وشغّل الفحص، ثم ارفع manifest مع الملفات الفعلية وسجل SHA/tag المطابقين بعد آخر commit. نجاح الفحص ليس درجة أو إيصال استلام؛ قناة التسليم والموعد تعلنهما المدربة.

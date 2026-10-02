@@ -15,3 +15,7 @@ Keep grades and submission receipts private. Final deadlines and the intake chan
 ينتج [التطبيق05](DAY5_GUIDE.md) التنبؤات والسياسة والنموذج وmanifest وZIP قابلًا لإعادة التشغيل. أضف أدلة الأيام السابقة ودفاترك المنفذة وعرضك؛ وافحص `day5_project_check.json` لما بقي. `BUNDLE_BYTES_VERIFIED` تحقق بصمات، وليس درجة أو قبولًا.
 
 بعد رفع الملفات النهائية سجّل SHA وtag الخاصين بمستودعك في نموذج التسليم الخاص. لا تضع SHA الالتزام المحتوي على manifest داخل manifest نفسه؛ ذلك مرجع دائري. دعم الدورة المثبت في الدفتر مرجع مصادر فقط، وليس SHA تسليمك. احتفظ بالملفات الفعلية بجانب الحزمة، وتعلن المدربة الموعد والقناة الخاصة.
+
+## افحص النسخة النهائية
+
+افتح [دليل الفحص النهائي](FINAL_CHECK_GUIDE.md) ثم [دفتر99 المجاني](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/99_final_submission_check.ipynb). أكمل ملفاتك وإجاباتك، وشغّل الفحص، ثم ارفع manifest مع الملفات الفعلية وسجل SHA/tag المطابقين بعد آخر commit. نجاح الفحص ليس درجة أو إيصال استلام؛ قناة التسليم والموعد تعلنهما المدربة.
