@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 import re
 from urllib.error import HTTPError
-from urllib.parse import urlsplit, parse_qs
+from urllib.parse import urlsplit, parse_qs, urlencode
 from urllib.request import Request, urlopen
 
 
@@ -45,7 +45,18 @@ def check(url):
             detail = player.get('videoDetails', {})
             status = player.get('playabilityStatus', {}).get('status')
             if status != 'OK' or detail.get('videoId') != video or detail.get('isPrivate'):
-                raise ValueError('Video playability not confirmed; review manually.')
+                # YouTube may require sign-in from data-center addresses. Its public
+                # oEmbed endpoint can confirm the exact video's metadata, not playback.
+                endpoint = 'https://www.youtube.com/oembed?' + urlencode({'url': url, 'format': 'json'})
+                with urlopen(Request(endpoint, headers={'User-Agent': 'CourseLinkCheck/1.0'}), timeout=25) as response:
+                    metadata = json.load(response)
+                if (metadata.get('type') != 'video' or metadata.get('provider_name') != 'YouTube'
+                        or '/embed/' + video not in metadata.get('html', '')
+                        or not metadata.get('title') or not metadata.get('author_name')):
+                    raise ValueError('Exact video metadata not confirmed; review manually.')
+                item.update(status='METADATA_ONLY', title=metadata['title'], channel=metadata['author_name'],
+                            playback_verified=False, detail='Public oEmbed metadata verified; playback requires a browser review.')
+                return item
             item.update(title=detail['title'], channel=detail['author'], duration_seconds=int(detail['lengthSeconds']))
         elif 'accounts.google.com' in item['final_url'] and 'colab.research.google.com' in url:
             item.update(status='SIGN_IN_REQUIRED', detail='Colab sign-in is expected; validate notebook source separately.')
@@ -69,7 +80,7 @@ def main():
         urls.update(collect(args.course_dir))
     with ThreadPoolExecutor(max_workers=4) as pool:
         results = list(pool.map(check, sorted(urls)))
-    counts = {status: sum(r['status']==status for r in results) for status in ['PASS','SIGN_IN_REQUIRED','UNVERIFIED','BROKEN']}
+    counts = {status: sum(r['status']==status for r in results) for status in ['PASS','METADATA_ONLY','SIGN_IN_REQUIRED','UNVERIFIED','BROKEN']}
     report = {'checked_at_utc': datetime.now(timezone.utc).isoformat(), 'counts': counts, 'results': results,
               'scope': 'Public URL availability and video metadata, not a grade or a full media playback test.'}
     output = Path(args.output); output.parent.mkdir(parents=True, exist_ok=True)
