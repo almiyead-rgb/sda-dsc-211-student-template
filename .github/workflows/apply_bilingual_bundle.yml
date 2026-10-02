@@ -1,0 +1,28 @@
+name: Apply Bilingual Bundle
+on:
+  push:
+    branches: [bilingual-side-by-side-v2]
+    paths:
+      - '.github/bilingual-v1.1.0.tar.gz'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: bilingual-side-by-side-v2
+          fetch-depth: 0
+      - name: Apply reviewed bilingual release
+        run: |
+          tar -xzf .github/bilingual-v1.1.0.tar.gz -C .
+          rm -f .github/bilingual-v1.1.0.tar.gz
+          rm -f .github/workflows/apply_bilingual_bundle.yml
+          rm -f .github/workflows/source_export.yml
+          git config user.name 'Meaad course release bot'
+          git config user.email 'almiyead@gmail.com'
+          git add -A
+          git commit -m 'Build complete side-by-side bilingual learner experience v1.1.0'
+          git push origin HEAD:bilingual-side-by-side-v2
