@@ -12,6 +12,7 @@
 | استعدادك قبل الدورة | [دليل 30–40 دقيقة](READINESS_GUIDE.md) · [افتح Colab](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/00_readiness_check.ipynb) |
 | اليوم الأول | [دليل خط الأساس والتعزيز](DAY1_GUIDE.md) · [افتح Colab](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/01_baseline_boosting.ipynb) |
 | اليوم الثاني | [دليل التحقق الصادق](DAY2_GUIDE.md) · [افتح Colab](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/02_validation_tuning.ipynb) |
+| اليوم الثالث | [دليل العتبة والخسارة والسعة](DAY3_GUIDE.md) · [افتح Colab](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/03_cost_sensitive_decision.ipynb) |
 | بيانات المشروع | [الدليل وقاموس الخصائص](data/DATA_GUIDE.md) |
 | رحلتك اليومية | [دليل المتدرب](STUDENT_GUIDE.md) |
 | بيئة التطبيق | [Colab](COLAB_GUIDE.md) |
@@ -23,7 +24,7 @@
 
 **90 نقطة تقني وإداري + 10 للعرض = 100. النجاح من 70 والتميز من 95.** جميع الأدوات المطلوبة مجانية.
 
-احفظ تطبيقاتك في `notebooks/` ومخرجات التشغيل في `artifacts/`، واملأ قوالب `reports/` بأدلتك وتبريراتك. اقرأ دليل `presentation/` لتجهيز عرضك. ابدأ الآن بدفتر الاستعداد وبيانات Tamweel Lite المنشورة. تطبيقا اليومين الأول والثاني متاحان الآن؛ بقية التطبيقات تتاح تباعًا في البوابة.
+احفظ تطبيقاتك في `notebooks/` ومخرجات التشغيل في `artifacts/`، واملأ قوالب `reports/` بأدلتك وتبريراتك. اقرأ دليل `presentation/` لتجهيز عرضك. ابدأ الآن بدفتر الاستعداد وبيانات Tamweel Lite المنشورة. تطبيقات الأيام الأول والثاني والثالث متاحة الآن؛ بقية التطبيقات تتاح تباعًا في البوابة.
 
 لا تضع بيانات شخصية أو أسرارًا أو درجات في هذا المستودع العام. تعلن المدربة قناة التسليم الخاصة.
 
