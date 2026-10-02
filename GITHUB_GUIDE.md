@@ -1,0 +1,9 @@
+# GitHub من المتصفح
+
+1. افتح القالب ثم Use this template → Create a new repository.
+2. تحقق من owner واسم مستودعك قبل الحفظ من Colab.
+3. لرفع المخرجات افتح المجلد الصحيح، ثم Add file → Upload files. اكتب وصفًا واضحًا للتغيير.
+4. لا تعدل Notebook نفسه في Colab وواجهة GitHub في الوقت نفسه؛ احتفظ بنسخة قبل حل التعارض.
+5. عند التسليم النهائي يسجل آخر commit SHA وtag، بعد كل التعديلات. لا تستخدم SHA قديمًا أو تضع أسرارًا في README.
+
+Public repositories are visible to everyone; use an anonymous project identifier and keep private information out of files, outputs, and commit messages.
