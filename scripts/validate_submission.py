@@ -77,7 +77,8 @@ def validate(root, smoke_report=None, template=False):
     def live_run(path):
         obj = json_read(path)
         require(obj['technical_status'] == 'TECHNICAL_READY', 'Run your own FAST computation; recovery is not final evidence.')
-        require(isinstance(obj['config']['seed'], int) and not isinstance(obj['config']['seed'], bool), 'Record an integer seed.')
+        config = obj.get('effective_config', obj.get('config', {}))
+        require(isinstance(config.get('seed'), int) and not isinstance(config.get('seed'), bool), 'Record an integer seed in the effective run configuration.')
         require(not any(word in json.dumps(obj) for word in ['EDUCATIONAL_EXAMPLE', 'EXAMPLE_ONLY', 'PRECOMPUTED']), 'Recovery evidence is not accepted.')
 
     for day in range(1, 5):
