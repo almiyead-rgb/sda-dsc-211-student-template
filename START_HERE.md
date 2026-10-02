@@ -1,11 +1,12 @@
 # ابدأ مشروعك
 
-1. اقرأ [بوابة التعلم](https://almiyead-rgb.github.io/advanced-machine-learning-methods-sda-dsc-211/) وتعرف على رحلة الأيام الخمسة.
-2. جهز حساب GitHub لحفظ العمل وحساب Google لفتح Colab. كلاهما ضمن المسار المجاني؛ لا بطاقة دفع مطلوبة.
-3. اختر **Use this template → Create a new repository** من هذا القالب، وسمِّ مستودع مشروعك دون بيانات شخصية.
-4. اقرأ [التقييم](RUBRIC.md)، و[دليل المتدرب](STUDENT_GUIDE.md)، و[الحفظ في GitHub](GITHUB_GUIDE.md).
-5. عند إتاحة رابط التطبيق، افتحه في Colab على CPU واحفظ نسخة في مستودعك. شغّل النسخة المعتمدة واحفظ المخرجات في مجلداتها.
+1. افتح [بوابة التعلم](https://almiyead-rgb.github.io/advanced-machine-learning-methods-sda-dsc-211/) وتعرف على رحلة الأيام الخمسة.
+2. جهز حساب GitHub لحفظ عملك وحساب Google لفتح Colab. لا بطاقة دفع أو اشتراك مطلوب.
+3. اختر **Use this template → Create a new repository** من هذا القالب، وسمّ مستودعك دون بيانات شخصية.
+4. اقرأ [دليل الاستعداد](READINESS_GUIDE.md)، ثم [افتح دفتر 00 في Colab](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/00_readiness_check.ipynb) على CPU وشغّل **Run all**.
+5. تحقق من **Environment ready** و**READY**، وراجع الأسئلة الستة غير المحسوبة في الدرجة.
+6. احفظ نسخة الدفتر في `notebooks/` وارفع ملفات JSON الأربعة إلى `artifacts/` في مستودعك.
 
-ابدأ بالأدلة المتاحة الآن. روابط التطبيقات والبيانات تعلنها المدربة مع أيام الدورة.
+تعرف على [بيانات المشروع](data/DATA_GUIDE.md) و[بنود التقييم](RUBRIC.md). تطبيقات الأيام الخمسة تتاح تباعًا في البوابة.
 
-Read the learning portal, prepare free accounts, create your repository with **Use this template**, and review the assessment criteria. Application links will be announced with the course days. Never paste a password or token into your notebook.
+Create your project using **Use this template**, open Notebook 00 on a free CPU runtime, run all cells, and save the notebook and readiness outputs. The six-question self-check is ungraded. Never paste passwords or API keys into a notebook.
