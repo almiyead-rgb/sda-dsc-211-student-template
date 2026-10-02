@@ -81,4 +81,4 @@ Use nested forward OOF for the stack, choose complexity only when evidence suppo
 
 ## افحص النسخة النهائية
 
-افتح [دليل الفحص النهائي](FINAL_CHECK_GUIDE.md) ثم [دفتر99 المجاني](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/99_final_submission_check.ipynb). أكمل ملفاتك وإجاباتك، وشغّل الفحص، ثم ارفع manifest مع الملفات الفعلية وسجل SHA/tag المطابقين بعد آخر commit. نجاح الفحص ليس درجة أو إيصال استلام؛ قناة التسليم والموعد تعلنهما المدربة.
+افتح [دليل الفحص النهائي](FINAL_CHECK_GUIDE.md) ثم [دفتر99 المجاني](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/99_final_submission_check.ipynb). أكمل ملفاتك وإجاباتك، وشغّل الفحص، ثم ارفع manifest مع الملفات الفعلية وسجل SHA/tag المطابقين بعد آخر commit. نجاح الفحص ليس درجة أو إيصال استلام؛ التسليم خلال اليومين الرابع والخامس وفق الموعد والقناة الخاصة اللذين تحددهما المدربة شفهيًا لدفعتك.

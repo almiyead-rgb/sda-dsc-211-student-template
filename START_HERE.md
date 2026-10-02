@@ -1,5 +1,9 @@
 # ابدأ مشروعك
 
+المحتوى والتسليم متاحان لجميع الدفعات دون تاريخ إغلاق ثابت. سلّم مشروعك خلال اليومين الرابع والخامس من دورتك، وفق التواريخ والأوقات وطريقة التسليم الخاصة التي تحددها المدربة شفهيًا لدفعتك.
+
+Materials and submission remain available for every cohort, with no fixed closing date. Submit during days 4 and 5 of your course, following the dates, times and private submission method your instructor announces verbally for your cohort.
+
 1. افتح [بوابة التعلم](https://almiyead-rgb.github.io/advanced-machine-learning-methods-sda-dsc-211/) وتعرف على رحلة الأيام الخمسة.
 2. جهز حساب GitHub لحفظ عملك وحساب Google لفتح Colab. لا بطاقة دفع أو اشتراك مطلوب.
 3. اختر **Use this template → Create a new repository** من هذا القالب، وسمّ مستودعك دون بيانات شخصية.

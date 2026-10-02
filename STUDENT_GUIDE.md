@@ -1,5 +1,9 @@
 # دليل المتدرب / Student guide
 
+المحتوى والتسليم متاحان لجميع الدفعات دون تاريخ إغلاق ثابت. سلّم مشروعك خلال اليومين الرابع والخامس من دورتك، وفق التواريخ والأوقات وطريقة التسليم الخاصة التي تحددها المدربة شفهيًا لدفعتك.
+
+Materials and submission remain available for every cohort, with no fixed closing date. Submit during days 4 and 5 of your course, following the dates, times and private submission method your instructor announces verbally for your cohort.
+
 المشروع يتطور عبر خمسة أيام: مقارنة baseline وboosting؛ تحقق صادق وتسرب؛ عدم توازن وقرار بخسارة افتراضية؛ تفسير ومعايرة؛ تجميع وتسليم.
 
 كل يوم: اقرأ هدف المختبر، شغّل النسخة المعتمدة على CPU، احفظ الأدلة، ثم اكتب تبريرك وحدود النتيجة. عدد النماذج أو أفضل AUC لا يعوض سلامة المنهج. لا تنسخ القيم التوضيحية من الشرائح بوصفها نتائجك.
