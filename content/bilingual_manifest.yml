@@ -4,12 +4,12 @@ mode: phased
 
 markdown_files:
   - path: README.md
-    status: planned
+    status: complete
     required_markers:
       - '<!-- BILINGUAL:EN -->'
       - '<!-- BILINGUAL:AR -->'
   - path: GLOSSARY.md
-    status: planned
+    status: complete
     required_markers:
       - '<!-- BILINGUAL:EN -->'
       - '<!-- BILINGUAL:AR -->'
@@ -29,8 +29,8 @@ notebooks:
     status: complete
     minimum_paired_cells: 5
   - path: notebooks/00_readiness_check.ipynb
-    status: planned
-    minimum_paired_cells: 4
+    status: complete
+    minimum_paired_cells: 8
   - path: notebooks/01_baseline_boosting.ipynb
     status: planned
     minimum_paired_cells: 8
