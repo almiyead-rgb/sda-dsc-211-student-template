@@ -1,0 +1,50 @@
+name: Bilingual Content Check
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'content/bilingual_manifest.yml'
+      - 'docs/**'
+      - 'notebooks/**'
+      - '*.md'
+      - 'scripts/check_bilingual_content.py'
+      - '.github/workflows/bilingual_content_check.yml'
+  pull_request:
+    paths:
+      - 'content/bilingual_manifest.yml'
+      - 'docs/**'
+      - 'notebooks/**'
+      - '*.md'
+      - 'scripts/check_bilingual_content.py'
+      - '.github/workflows/bilingual_content_check.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  bilingual:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Install checker dependency
+        run: python -m pip install PyYAML==6.0.3
+      - name: Validate phased bilingual content
+        run: python scripts/check_bilingual_content.py --output .check-output/bilingual-content.json
+      - name: Upload bilingual report
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: bilingual-content-report
+          path: .check-output/bilingual-content.json
+          retention-days: 14
