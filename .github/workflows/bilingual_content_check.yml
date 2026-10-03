@@ -63,6 +63,11 @@ jobs:
           python scripts/check_notebook_code_contract.py
           --contract content/day3_notebook_code_contract.json
           --output check-output/notebook-03-code-contract.json
+      - name: Verify Day 4 executable cells
+        run: >-
+          python scripts/check_notebook_code_contract.py
+          --contract content/day4_notebook_code_contract.json
+          --output check-output/notebook-04-code-contract.json
       - name: Upload bilingual quality reports
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
