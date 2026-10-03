@@ -8,6 +8,41 @@ markdown_files:
     required_markers:
       - '<!-- BILINGUAL:EN -->'
       - '<!-- BILINGUAL:AR -->'
+  - path: START_HERE.md
+    status: complete
+    required_markers:
+      - '<!-- BILINGUAL:EN -->'
+      - '<!-- BILINGUAL:AR -->'
+  - path: READINESS_GUIDE.md
+    status: complete
+    required_markers:
+      - '<!-- BILINGUAL:EN -->'
+      - '<!-- BILINGUAL:AR -->'
+  - path: COLAB_GUIDE.md
+    status: complete
+    required_markers:
+      - '<!-- BILINGUAL:EN -->'
+      - '<!-- BILINGUAL:AR -->'
+  - path: GITHUB_GUIDE.md
+    status: complete
+    required_markers:
+      - '<!-- BILINGUAL:EN -->'
+      - '<!-- BILINGUAL:AR -->'
+  - path: FAQ.md
+    status: complete
+    required_markers:
+      - '<!-- BILINGUAL:EN -->'
+      - '<!-- BILINGUAL:AR -->'
+  - path: TROUBLESHOOTING.md
+    status: complete
+    required_markers:
+      - '<!-- BILINGUAL:EN -->'
+      - '<!-- BILINGUAL:AR -->'
+  - path: LEARNING_RESOURCES.md
+    status: complete
+    required_markers:
+      - '<!-- BILINGUAL:EN -->'
+      - '<!-- BILINGUAL:AR -->'
   - path: GLOSSARY.md
     status: complete
     required_markers:
