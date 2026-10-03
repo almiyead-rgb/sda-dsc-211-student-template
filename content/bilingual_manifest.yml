@@ -43,6 +43,31 @@ markdown_files:
     required_markers:
       - '<!-- BILINGUAL:EN -->'
       - '<!-- BILINGUAL:AR -->'
+  - path: TECHNICAL_REQUIREMENTS.md
+    status: complete
+    required_markers:
+      - '<!-- BILINGUAL:EN -->'
+      - '<!-- BILINGUAL:AR -->'
+  - path: ADMINISTRATIVE_REQUIREMENTS.md
+    status: complete
+    required_markers:
+      - '<!-- BILINGUAL:EN -->'
+      - '<!-- BILINGUAL:AR -->'
+  - path: RUBRIC.md
+    status: complete
+    required_markers:
+      - '<!-- BILINGUAL:EN -->'
+      - '<!-- BILINGUAL:AR -->'
+  - path: SUBMISSION_GUIDE.md
+    status: complete
+    required_markers:
+      - '<!-- BILINGUAL:EN -->'
+      - '<!-- BILINGUAL:AR -->'
+  - path: COURSE_ALIGNMENT.md
+    status: complete
+    required_markers:
+      - '<!-- BILINGUAL:EN -->'
+      - '<!-- BILINGUAL:AR -->'
   - path: docs/BILINGUAL_NOTEBOOK_STANDARD.md
     status: complete
     required_markers:
