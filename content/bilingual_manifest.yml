@@ -18,8 +18,16 @@ markdown_files:
     required_markers:
       - 'English'
       - 'العربية'
+  - path: docs/GLOSSARY_BILINGUAL_DRAFT.md
+    status: complete
+    required_markers:
+      - '<!-- BILINGUAL:EN -->'
+      - '<!-- BILINGUAL:AR -->'
 
 notebooks:
+  - path: notebooks/00_readiness_check_bilingual_preview.ipynb
+    status: complete
+    minimum_paired_cells: 5
   - path: notebooks/00_readiness_check.ipynb
     status: planned
     minimum_paired_cells: 4
