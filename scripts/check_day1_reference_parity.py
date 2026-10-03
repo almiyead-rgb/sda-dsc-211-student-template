@@ -48,6 +48,7 @@ def read_json(path: Path) -> dict[str, Any]:
 
 
 def execute(repo_root: Path, workspace: Path) -> tuple[Path, float]:
+    workspace.mkdir(parents=True, exist_ok=True)
     notebook = nbformat.read(repo_root / NOTEBOOK, as_version=4)
     adapted = 0
     for cell in notebook.cells:
@@ -115,9 +116,10 @@ def compare_frame(
                 equal_nan=True,
             ):
                 issues.append(f"Numeric mismatch in {key}.{column}")
-        else:
-            if not left.fillna("<NA>").astype(str).equals(right.fillna("<NA>").astype(str)):
-                issues.append(f"Value mismatch in {key}.{column}")
+        elif not left.fillna("<NA>").astype(str).equals(
+            right.fillna("<NA>").astype(str)
+        ):
+            issues.append(f"Value mismatch in {key}.{column}")
     return issues
 
 
@@ -202,29 +204,39 @@ def main() -> int:
 
     candidate_root = args.candidate_root.resolve()
     reference_root = args.reference_root.resolve()
-    with tempfile.TemporaryDirectory(prefix="day1-parity-") as temp:
-        temp_root = Path(temp)
-        reference_artifacts, reference_seconds = execute(
-            reference_root, temp_root / "reference-workspace"
-        )
-        candidate_artifacts, candidate_seconds = execute(
-            candidate_root, temp_root / "candidate-workspace"
-        )
-        report = compare_artifacts(reference_artifacts, candidate_artifacts)
-        report.update(
-            {
-                "reference": "main / released v1.0.0 learner notebook",
-                "candidate": "develop/bilingual-v1.1.0",
-                "reference_seconds": reference_seconds,
-                "candidate_seconds": candidate_seconds,
-                "scope": (
-                    "Compares stable scientific outputs and required artifact inventory. "
-                    "Timing fields and image bytes are intentionally excluded."
-                ),
-            }
-        )
-
     args.output.parent.mkdir(parents=True, exist_ok=True)
+
+    try:
+        with tempfile.TemporaryDirectory(prefix="day1-parity-") as temp:
+            temp_root = Path(temp)
+            reference_artifacts, reference_seconds = execute(
+                reference_root, temp_root / "reference-workspace"
+            )
+            candidate_artifacts, candidate_seconds = execute(
+                candidate_root, temp_root / "candidate-workspace"
+            )
+            report = compare_artifacts(reference_artifacts, candidate_artifacts)
+            report.update(
+                {
+                    "reference": "main / released v1.0.0 learner notebook",
+                    "candidate": "develop/bilingual-v1.1.0",
+                    "reference_seconds": reference_seconds,
+                    "candidate_seconds": candidate_seconds,
+                    "scope": (
+                        "Compares stable scientific outputs and required artifact inventory. "
+                        "Timing fields and image bytes are intentionally excluded."
+                    ),
+                }
+            )
+    except Exception as exc:
+        report = {
+            "status": "ERROR",
+            "error_type": type(exc).__name__,
+            "error": str(exc),
+            "reference": "main / released v1.0.0 learner notebook",
+            "candidate": "develop/bilingual-v1.1.0",
+        }
+
     args.output.write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
