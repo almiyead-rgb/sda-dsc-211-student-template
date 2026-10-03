@@ -42,13 +42,21 @@ jobs:
       - name: Install checker dependency
         run: python -m pip install PyYAML==6.0.3
       - name: Validate phased bilingual content
-        run: python scripts/check_bilingual_content.py --output .check-output/bilingual-content.json
+        run: python scripts/check_bilingual_content.py --output check-output/bilingual-content.json
       - name: Verify Notebook 00 executable cells
-        run: python scripts/check_notebook_code_contract.py --output .check-output/notebook-code-contract.json
+        run: >-
+          python scripts/check_notebook_code_contract.py
+          --contract content/notebook_code_contract.json
+          --output check-output/notebook-00-code-contract.json
+      - name: Verify Day 1 executable cells
+        run: >-
+          python scripts/check_notebook_code_contract.py
+          --contract content/day1_notebook_code_contract.json
+          --output check-output/notebook-01-code-contract.json
       - name: Upload bilingual quality reports
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: bilingual-quality-reports
-          path: .check-output
+          path: check-output
           retention-days: 14
