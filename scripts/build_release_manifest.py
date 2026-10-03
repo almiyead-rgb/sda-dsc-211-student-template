@@ -26,15 +26,29 @@ def is_excluded(relative: str, patterns: list[str]) -> bool:
 
 
 def collect_files(root: Path, include: list[str], exclude: list[str]) -> list[Path]:
+    """Resolve files from file globs and directory globs deterministically.
+
+    ``Path.glob('directory/**')`` can yield directories rather than their files.
+    When an include pattern resolves to a directory, recurse through it explicitly so
+    release manifests cannot silently omit nested scripts, data or workflows.
+    """
     selected: dict[str, Path] = {}
+
+    def add_file(path: Path) -> None:
+        if not path.is_file():
+            return
+        relative = path.relative_to(root).as_posix()
+        if is_excluded(relative, exclude):
+            return
+        selected[relative] = path
+
     for pattern in include:
         for path in root.glob(pattern):
-            if not path.is_file():
-                continue
-            relative = path.relative_to(root).as_posix()
-            if is_excluded(relative, exclude):
-                continue
-            selected[relative] = path
+            if path.is_dir():
+                for child in path.rglob("*"):
+                    add_file(child)
+            else:
+                add_file(path)
     return [selected[key] for key in sorted(selected)]
 
 
