@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "release_version": "v1.1.0",
+  "repository": "almiyead-rgb/sda-dsc-211-student-template",
+  "file_count": 35,
+  "aggregate_sha256": "b4a6c05eca0b1b7716a97c89d2c80b5a63052ace9892ea8b625e696d18a5a53b",
+  "files": [
+    {
+      "path": "ADMINISTRATIVE_REQUIREMENTS.md",
+      "bytes": 8222,
+      "sha256": "3018ef4236fe83e8ec54d97834c0cf3b81a2ed1ba50d85f1a0a76887355f140b"
+    },
+    {
+      "path": "AUTHORS.md",
+      "bytes": 108,
+      "sha256": "20f06e887bd4e0260c4b242da4d516436ce0913aff1f07a0991ec81d06549f43"
+    },
+    {
+      "path": "CITATION.cff",
+      "bytes": 334,
+      "sha256": "4e4bbcce6c0de6d3ca22363577f8b4d3152c8373b2114a2cd531a8a04d5851dd"
+    },
+    {
+      "path": "COLAB_GUIDE.md",
+      "bytes": 12041,
+      "sha256": "9ddda10eb98267ec4c4c651d76cd9e06777ae2ed2e46499a64ce4e67e142b251"
+    },
+    {
+      "path": "COURSE_ALIGNMENT.md",
+      "bytes": 6875,
+      "sha256": "5a019ad8f8c54609256daa31bd246c7ee90d62b8c093df9d4d2fdcbe4ef5d887"
+    },
+    {
+      "path": "DAY1_GUIDE.md",
+      "bytes": 15991,
+      "sha256": "3454c9bbf2e439ab2959249f5bb83313d21e868a9b8d39eb1accf13c276bbca9"
+    },
+    {
+      "path": "DAY2_GUIDE.md",
+      "bytes": 28306,
+      "sha256": "7de49168ab77d005afe982ea365d1878fe511c4a3555567ea91ebd400af1f049"
+    },
+    {
+      "path": "DAY3_GUIDE.md",
+      "bytes": 22308,
+      "sha256": "37263cba5521f4c4bb31ca4f9d4d38c6c92c262563817a66da37cb5ae9ea17da"
+    },
+    {
+      "path": "DAY4_GUIDE.md",
+      "bytes": 29169,
+      "sha256": "62f666731f327626d58dccf4892d8e331a114248bdb63e5399c416bd694895a7"
+    },
+    {
+      "path": "DAY5_GUIDE.md",
+      "bytes": 28880,
+      "sha256": "7ffeea237ef36c03a72809938409150123cc99cbf941c64630ba59c9d86fdedc"
+    },
+    {
+      "path": "FAQ.md",
+      "bytes": 13428,
+      "sha256": "0d4c473bfa4e6a8bd02209d5c3937aff34bd69e7a7acc2b34b10623175a47f5b"
+    },
+    {
+      "path": "FINAL_CHECK_GUIDE.md",
+      "bytes": 14143,
+      "sha256": "9aaea55ddabc037d93c955e3cc61f3ab14f17a7b905d779a6e77ff61ac7d03eb"
+    },
+    {
+      "path": "GITHUB_GUIDE.md",
+      "bytes": 11881,
+      "sha256": "98c95b4a1c77ba98a5ed9351a378b6a17c59e64bc01679abed28aa2212c381bf"
+    },
+    {
+      "path": "GLOSSARY.md",
+      "bytes": 12044,
+      "sha256": "e937327dead2133d5c659a289f301425cad824117a1aa94195d832bbe57557d5"
+    },
+    {
+      "path": "LEARNING_RESOURCES.md",
+      "bytes": 19543,
+      "sha256": "156d16ca32f77beaf102e5a5ace204cad1383ec07ad10cda61049114d0e72fcc"
+    },
+    {
+      "path": "NOTICE.md",
+      "bytes": 1088,
+      "sha256": "ea20025a9905853142854b71aff8beb3a02924ded42086ae499c28d5a6445392"
+    },
+    {
+      "path": "READINESS_GUIDE.md",
+      "bytes": 11839,
+      "sha256": "8bf9fbb192b072a7b1e5d8dd158c418e6a8a3f75a53bedcb69fbb88cdc518362"
+    },
+    {
+      "path": "README.md",
+      "bytes": 11179,
+      "sha256": "6031d0ec5983f3eefe207b664632fa9f72053243424becfc2b532cd0e6d8f072"
+    },
+    {
+      "path": "RELEASE_NOTES.md",
+      "bytes": 5088,
+      "sha256": "75f31a1d29a40b4d55582ca00f806b88fd0c1fc163abf551c79339afbb0413b9"
+    },
+    {
+      "path": "RUBRIC.md",
+      "bytes": 11004,
+      "sha256": "e8256ecc3263953752770968d28f83cb8b28fed55b728ca6c2933dae300b1fa9"
+    },
+    {
+      "path": "START_HERE.md",
+      "bytes": 11117,
+      "sha256": "803affb7d997c802fffcae911fbfb48cd64e5e91decf416da7dfce9aa5ed7834"
+    },
+    {
+      "path": "SUBMISSION_GUIDE.md",
+      "bytes": 11474,
+      "sha256": "589b90ba930e019a713145f36084e84e4577257197b460c66deff9025a761d08"
+    },
+    {
+      "path": "TECHNICAL_REQUIREMENTS.md",
+      "bytes": 8332,
+      "sha256": "f7b1a66bf12f3bccc152c44b3388facda7266eb10dc12be3abe3f606ac35b01d"
+    },
+    {
+      "path": "TROUBLESHOOTING.md",
+      "bytes": 15444,
+      "sha256": "ea3e6d0c41ef14f34e43b713b15b74f859833e469d649e0a1e3567e5e8e50ed9"
+    },
+    {
+      "path": "constraints.txt",
+      "bytes": 242,
+      "sha256": "c8ba46560d5ee64f8c94782734b2b9f496cf115f2d1060165841ce771a1a7873"
+    },
+    {
+      "path": "notebooks/00_readiness_check.ipynb",
+      "bytes": 23500,
+      "sha256": "90fff166a301eb8b29750e1421a9ab4f9165d9f3b23cb542c073b8d681b42c25"
+    },
+    {
+      "path": "notebooks/00_readiness_check_bilingual_preview.ipynb",
+      "bytes": 9986,
+      "sha256": "f0b8404ad7e7bf3d7e07cdf05448975bea682ca9b3911972f82ef50ee1bc8af5"
+    },
+    {
+      "path": "notebooks/01_baseline_boosting.ipynb",
+      "bytes": 44331,
+      "sha256": "951c9c5b280f0098bcd3a8cf4b1d097a5e5d83423847add4ac2f2176aadd433b"
+    },
+    {
+      "path": "notebooks/02_validation_tuning.ipynb",
+      "bytes": 53767,
+      "sha256": "6223c5c351d297885a3c35468543404bcf1d015445af2560a408c4a1038089e1"
+    },
+    {
+      "path": "notebooks/03_cost_sensitive_decision.ipynb",
+      "bytes": 58657,
+      "sha256": "1cf2c26e5970529275e1ed6b3158c271ab660cffeee274a3563379026a7b6cb9"
+    },
+    {
+      "path": "notebooks/04_explain_calibrate.ipynb",
+      "bytes": 60957,
+      "sha256": "008e996dc4849bf109d0fccb7b11cca672f0ce6e26ef1115ae802d46c121be7a"
+    },
+    {
+      "path": "notebooks/05_final_model.ipynb",
+      "bytes": 62655,
+      "sha256": "94984f0818a4581bec2a736b8a5f9f23f3ca21f44d85a7c9d899f21ba4343ad1"
+    },
+    {
+      "path": "notebooks/99_final_submission_check.ipynb",
+      "bytes": 22499,
+      "sha256": "80d941a5790cd5ac73b06ba0145fb2df99bd5503c38b57de24f36d1b6cd66689"
+    },
+    {
+      "path": "requirements-check.txt",
+      "bytes": 70,
+      "sha256": "53b1e56849df424bfa7655a2a5376829cfb43062270d9e66b4694f157a177674"
+    },
+    {
+      "path": "requirements-colab.txt",
+      "bytes": 221,
+      "sha256": "bba1916d8958bb7a20089c54941b4a23f7195feae270f5951e1d8d1921ea9723"
+    }
+  ],
+  "notes": "Integrity inventory only. The final immutable Git tag and exact commit SHA are recorded outside this file to avoid a circular self-reference."
+}
