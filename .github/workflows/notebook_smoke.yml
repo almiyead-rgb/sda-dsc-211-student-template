@@ -12,6 +12,7 @@ on:
       - 'content/day3_notebook_code_contract.json'
       - 'content/day4_notebook_code_contract.json'
       - 'content/day5_notebook_code_contract.json'
+      - 'content/notebook99_code_contract.json'
       - 'requirements*.txt'
       - 'constraints.txt'
       - '.github/workflows/notebook_smoke.yml'
@@ -25,6 +26,7 @@ on:
       - 'content/day3_notebook_code_contract.json'
       - 'content/day4_notebook_code_contract.json'
       - 'content/day5_notebook_code_contract.json'
+      - 'content/notebook99_code_contract.json'
       - 'requirements*.txt'
       - 'constraints.txt'
       - '.github/workflows/notebook_smoke.yml'
@@ -91,6 +93,15 @@ jobs:
           python scripts/check_notebook_code_contract.py
           --contract content/day5_notebook_code_contract.json
           --output "$SMOKE_OUTPUT/notebook-05-code-contract.json"
+      - name: Verify Notebook 99 executable cells
+        run: >-
+          python scripts/check_notebook_code_contract.py
+          --contract content/notebook99_code_contract.json
+          --output "$SMOKE_OUTPUT/notebook-99-code-contract.json"
+      - name: Validate Notebook 99 structure
+        run: >-
+          python scripts/check_final_check_notebook.py
+          --output "$SMOKE_OUTPUT/notebook99-structure.json"
       - name: Execute applications in fresh kernels
         run: python scripts/run_notebooks.py --output "$SMOKE_OUTPUT"
       - name: Stage reports for artifact upload
