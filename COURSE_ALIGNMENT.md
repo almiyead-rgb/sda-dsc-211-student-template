@@ -3,87 +3,33 @@
 <!-- BILINGUAL:EN -->
 <!-- BILINGUAL:AR -->
 
-<table>
-<tr>
-<td width="50%" valign="top" dir="ltr">
+## رحلة المشروع
 
-## Why this matrix exists
+| اليوم | المحتوى التعليمي | اللاب | المخرج اليومي | سؤال اليوم |
+|---:|---|---|---|---|
+| 1 | Baseline وXGBoost وLightGBM والمقاييس | Notebook 01 | مقارنة النماذج والرسوم | أي نموذج اخترت، وما دليلك؟ |
+| 2 | التحقق الزمني والعملاء ومنع التسرب وOptuna | Notebook 02 | تقارير التحقق والتسرب والبحث | ما التسرب الذي منعته؟ |
+| 3 | عدم التوازن وOOF والتكلفة والعتبة والسعة | Notebook 03 | مسح العتبات وسياسة القرار | لماذا لا تكفي 0.5؟ |
+| 4 | Permutation وSHAP والمعايرة والاستقرار | Notebook 04 | تفسير ومعايرة ورسوم ثقة | ما أهم خاصية وما حدود التفسير؟ |
+| 5 | التجميع وWorth-It Gate والنموذج النهائي | Notebook 05 | النموذج و`submission.csv` والحزمة | لماذا اخترت النموذج النهائي؟ |
 
-This matrix shows how the five-day Tamweel Lite project implements the learning outcomes of **SDA-DSC-211 — Advanced Machine Learning Methods**. Every assessed concept is linked to a lab, a learner artifact and the revised 100-point project rubric.
+## مبدأ البناء
 
-</td>
-<td width="50%" valign="top" dir="rtl">
+كل لاب يضيف جزءًا مستخدمًا في المشروع النهائي. لا يعيد المتدرب كتابة تقارير من قوالب منفصلة؛ الكود يصدر الأدلة الفنية، والمتدرب يضيف تفسيره المختصر في README وإجابة سؤال اليوم.
 
-## لماذا توجد هذه المصفوفة؟
+## التسلسل النهائي
 
-توضح هذه المصفوفة كيف يحقق مشروع **Tamweel Lite** المتدرج خلال خمسة أيام مخرجات تعلم برنامج **SDA-DSC-211 — أساليب تعلم الآلة المتقدمة**. يرتبط كل مفهوم مقيم بلاب ومخرج للمتدرب ومعيار في سلم المشروع من 100 درجة.
+```text
+تعلم المفهوم
+→ تشغيل كود Colab
+→ مقارنة النتيجة بالمرجع
+→ إجابة سؤال واحد
+→ رفع يومي إلى GitHub
+→ دمج تلقائي في اليوم الخامس
+→ Notebook 99
+→ التسليم النهائي
+```
 
-</td>
-</tr>
-</table>
+## English summary
 
-## Alignment matrix | مصفوفة المواءمة
-
-| Outcome | Learning outcome — English | مخرج التعلم — العربية | Day / Lab | Learner evidence | Rubric |
-|---|---|---|---|---|---|
-| LO1 | Build high-performance tabular classifiers with XGBoost and LightGBM and compare them against a defensible baseline. | بناء مصنفات عالية الأداء باستخدام XGBoost وLightGBM ومقارنتها بخط أساس قابل للدفاع. | Day 1 — `01_baseline_boosting.ipynb` | model comparison, learning curves, candidate decision | T2 |
-| LO2 | Design validation that respects time, repeated customers and leakage boundaries. | تصميم تحقق يراعي الزمن والعملاء المتكررين وحدود تسرب البيانات. | Day 2 — `02_validation_tuning.ipynb` | leakage audit, fold audit, OOF coverage | T3 |
-| LO3 | Apply bounded hyperparameter optimisation without uncontrolled search. | تطبيق ضبط محدود للمعاملات دون بحث غير منضبط. | Day 2 — bounded Optuna search | search results, selected parameters, provenance | T3 |
-| LO4 | Handle class imbalance and asymmetric error costs using honest predictions and a documented policy. | معالجة عدم توازن الفئات وتفاوت تكلفة الأخطاء باستخدام تنبؤات صادقة وسياسة موثقة. | Day 3 — `03_cost_sensitive_decision.ipynb` | strategy comparison, threshold sweep, Decision Card | T4 |
-| LO5 | Explain global and local model behaviour with permutation importance and SHAP while respecting interpretability limits. | تفسير سلوك النموذج العام والمحلي باستخدام أهمية التبديل وSHAP مع الالتزام بحدود التفسير. | Day 4 — `04_explain_calibrate.ipynb` | importance tables, beeswarm, waterfall, reason codes | T5 |
-| LO6 | Evaluate calibration, stability, uncertainty and operational impact rather than discrimination alone. | تقييم المعايرة والاستقرار وعدم اليقين والأثر التشغيلي بدل الاعتماد على قدرة الترتيب وحدها. | Day 4 | reliability curve, Brier, ECE, stability evidence | T5, T7 |
-| LO7 | Build and assess averaging or stacking with honest OOF predictions and a Worth-It Gate. | بناء المتوسط أو التكديس وتقييمه باستخدام تنبؤات OOF صادقة وبوابة جدوى. | Day 5 — `05_final_model.ipynb` | ensemble comparison, Worth-It decision, final pipeline | T6 |
-| LO8 | Deliver a reproducible end-to-end project with governance, interpretation and a professional defence. | تسليم مشروع متكامل قابل لإعادة الإنتاج ويتضمن الحوكمة والتفسير والدفاع المهني. | Days 1–5 + Notebook 99 | README, reports, Model Card, manifest, final bundle, presentation | T1, T7, A1–A4 |
-
-## Assessment relationship | علاقة المواءمة بالتقييم
-
-- Technical project requirements: **80 points**. | المتطلبات التقنية للمشروع: **80 درجة**.
-- Administrative project requirements: **20 points**. | المتطلبات الإدارية للمشروع: **20 درجة**.
-- Final project score: **100 points**. | درجة المشروع النهائية: **100 درجة**.
-- Attendance is verified separately and controls certificate eligibility. | يُتحقق من الحضور بصورة مستقلة، وهو شرط لاستحقاق نوع الشهادة.
-- Project completion threshold: **70 / 100**. | حد اجتياز المشروع: **70 من 100**.
-
-## Five-day build journey | رحلة البناء خلال خمسة أيام
-
-| Day | English focus | التركيز بالعربية | Main artifact |
-|---:|---|---|---|
-| 1 | Baseline, gradient boosting and fair comparison | خط الأساس والتعزيز والمقارنة العادلة | model comparison and candidate decision |
-| 2 | Honest validation, leakage control and bounded search | التحقق الصادق ومنع التسرب والبحث المحدود | validation report and best parameters |
-| 3 | Imbalance, threshold, simulated decision cost and capacity | عدم التوازن والعتبة وتكلفة القرار التعليمية والسعة | Decision Card |
-| 4 | Explainability, calibration and stability | التفسير والمعايرة والاستقرار | Interpretability Report |
-| 5 | Ensemble decision, final model and reproducible delivery | قرار التجميع والنموذج النهائي والتسليم القابل لإعادة الإنتاج | final model, submission and Model Card |
-
-<table>
-<tr>
-<td width="50%" valign="top" dir="ltr">
-
-## Design principles
-
-1. One progressive project replaces disconnected examples.
-2. Every day produces an artifact used by the final submission.
-3. Code runs on free Colab CPU with pinned dependencies.
-4. Assessment rewards evidence and reasoning, not only model score.
-5. Challenge data and hidden evaluation remain isolated.
-6. The learner must be able to explain every central decision.
-
-</td>
-<td width="50%" valign="top" dir="rtl">
-
-## مبادئ التصميم
-
-1. يحل مشروع متدرج واحد محل الأمثلة المنفصلة.
-2. ينتج كل يوم مخرجًا يدخل في التسليم النهائي.
-3. يعمل الكود على CPU المجاني في Colab بإصدارات مثبتة.
-4. يكافئ التقييم الأدلة والتفسير، وليس درجة النموذج فقط.
-5. تبقى بيانات التحدي والتقييم المخفي معزولة.
-6. يجب أن يستطيع المتدرب شرح كل قرار محوري.
-
-</td>
-</tr>
-</table>
-
-## Evidence traceability | تتبع الأدلة
-
-The final repository should allow a reviewer to move from each learning outcome to the exact notebook section, artifact, report paragraph and rubric criterion that proves completion.
-
-يجب أن يمكّن المستودع النهائي المراجع من الانتقال من كل مخرج تعلم إلى قسم الدفتر والملف الناتج وفقرة التقرير ومعيار التقييم التي تثبت تحقيقه.
+Each day connects learning, one Colab lab, reference-output comparison, one short question and a same-day GitHub upload. Day 5 turns the accumulated work into the complete reproducible project.

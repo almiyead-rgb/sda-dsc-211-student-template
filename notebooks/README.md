@@ -1,14 +1,15 @@
-# دفاتر تطبيقك
+# Notebooks | دفاتر Colab
 
-| الدفتر | ما تنجزه | افتحه |
-|---|---|---|
-| 00 — الاستعداد | البيئة والبيانات وستة أسئلة للمراجعة وحفظ المخرجات | [Colab](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/00_readiness_check.ipynb) · [GitHub](00_readiness_check.ipynb) |
-| 01 — خط الأساس والتعزيز | مقارنة ثلاثة نماذج، ومنحنيات، واختيار مرشح مع ثلاث ملاحظات | [Colab](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/01_baseline_boosting.ipynb) · [GitHub](01_baseline_boosting.ipynb) |
-| 02 — التحقق الصادق | تدقيق التسرب، تحقق الزمن والعملاء، بحث محدود وتفسير الفروق | [Colab](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/02_validation_tuning.ipynb) · [GitHub](02_validation_tuning.ipynb) |
-| 03 — العتبة والخسارة | أوزان الفئة وOOF وسعة المراجعة وبطاقة القرار | [Colab](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/03_cost_sensitive_decision.ipynb) · [GitHub](03_cost_sensitive_decision.ipynb) |
-| 04 — التفسير والمعايرة | SHAP ومعايرة منفصلة واستقرار وسعة المراجعة | [Colab](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/04_explain_calibrate.ipynb) · [GitHub](04_explain_calibrate.ipynb) |
-| 05 — التجميع والتسليم | مقارنة التجميع ونموذج محفوظ وبطاقة وحزمة موثقة | [Colab](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/05_final_model.ipynb) · [GitHub](05_final_model.ipynb) |
+ابدأ من [مسار التعلم اليومي](../DAILY_LEARNING_PATH.md)، ثم افتح Notebook اليوم وشغّل `Runtime → Run all`.
 
-اقرأ [دليل الاستعداد](../READINESS_GUIDE.md). احفظ نسختك في هذا المجلد ومخرجاتك في `artifacts/`. اقرأ [دليل اليوم الأول](../DAY1_GUIDE.md) وابدأ التطبيق01. ثم [دليل اليوم الثاني](../DAY2_GUIDE.md) والتطبيق02. بعدهما [دليل اليوم الثالث](../DAY3_GUIDE.md) والتطبيق03. ثم [دليل اليوم الرابع](../DAY4_GUIDE.md) والتطبيق04. ثم [دليل اليوم الخامس](../DAY5_GUIDE.md) والتطبيق05 للتجميع والتسليم.
+| اليوم | Notebook | سؤال التسليم |
+|---:|---|---|
+| 0 | `00_readiness_check.ipynb` | هل بيئتك جاهزة دون أخطاء حمراء؟ |
+| 1 | `01_baseline_boosting.ipynb` | أي نموذج اخترت، وما دليلك؟ |
+| 2 | `02_validation_tuning.ipynb` | ما التسرب الذي منعته؟ |
+| 3 | `03_cost_sensitive_decision.ipynb` | لماذا لا تكفي عتبة 0.5؟ |
+| 4 | `04_explain_calibrate.ipynb` | ما أهم خاصية وما حدود تفسيرها؟ |
+| 5 | `05_final_model.ipynb` | لماذا اخترت النموذج النهائي؟ |
+| 99 | `99_final_submission_check.ipynb` | هل المشروع مكتمل وآمن وقابل لإعادة التشغيل؟ |
 
-Open Notebook 00, 01, 02, 03, 04 or 05, use a free CPU runtime, and save your own copy and actual outputs.
+بعد كل يوم نزّل Notebook بالمخرجات، وارفعه مع الملفات الأساسية، ثم أضف إجابة السؤال إلى README. راجع [النتائج المتوقعة](../EXPECTED_RESULTS.md) قبل الإرسال.

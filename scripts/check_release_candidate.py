@@ -1,8 +1,4 @@
-"""Validate the bilingual learner repository as a release candidate.
-
-This check verifies documentation consistency, forbidden wording, obvious secret
-patterns, required release files and the absence of unfinished placeholders.
-"""
+"""Validate the simplified bilingual learner repository as a release candidate."""
 from __future__ import annotations
 
 import argparse
@@ -12,13 +8,14 @@ from pathlib import Path
 from typing import Any
 
 REQUIRED_FILES = [
-    "README.md", "START_HERE.md", "READINESS_GUIDE.md", "COLAB_GUIDE.md",
-    "GITHUB_GUIDE.md", "FAQ.md", "TROUBLESHOOTING.md", "LEARNING_RESOURCES.md",
-    "GLOSSARY.md", "DAY1_GUIDE.md", "DAY2_GUIDE.md", "DAY3_GUIDE.md",
-    "DAY4_GUIDE.md", "DAY5_GUIDE.md", "FINAL_CHECK_GUIDE.md",
-    "TECHNICAL_REQUIREMENTS.md", "ADMINISTRATIVE_REQUIREMENTS.md", "RUBRIC.md",
-    "SUBMISSION_GUIDE.md", "COURSE_ALIGNMENT.md", "RELEASE_NOTES.md",
-    "content/bilingual_manifest.yml", "release/release_scope.json",
+    "README.md", "START_HERE.md", "DAILY_LEARNING_PATH.md", "EXPECTED_RESULTS.md",
+    "READINESS_GUIDE.md", "COLAB_GUIDE.md", "GITHUB_GUIDE.md", "FAQ.md",
+    "TROUBLESHOOTING.md", "LEARNING_RESOURCES.md", "GLOSSARY.md",
+    "DAY1_GUIDE.md", "DAY2_GUIDE.md", "DAY3_GUIDE.md", "DAY4_GUIDE.md",
+    "DAY5_GUIDE.md", "FINAL_CHECK_GUIDE.md", "TECHNICAL_REQUIREMENTS.md",
+    "ADMINISTRATIVE_REQUIREMENTS.md", "RUBRIC.md", "SUBMISSION_GUIDE.md",
+    "COURSE_ALIGNMENT.md", "RELEASE_NOTES.md", "content/bilingual_manifest.yml",
+    "release/release_scope.json", "reports/README.md",
 ]
 
 LEARNER_TEXT_FILES = [
@@ -33,6 +30,8 @@ FORBIDDEN_PHRASES = {
     "مضمون بلا أخطاء": "لا تعد بضمان مطلق لعدم وجود أخطاء",
     "90 project points + 10 presentation points": "use the 100-point project policy",
     "90 درجة للمشروع + 10 درجات للعرض": "استخدم سياسة المشروع من 100 درجة",
+    "presentation is required": "the presentation requirement was removed",
+    "العرض التقديمي إلزامي": "أُلغي متطلب العرض",
 }
 
 PLACEHOLDER_PATTERNS = [
@@ -84,13 +83,6 @@ def main() -> int:
             if pattern.search(text):
                 issues.append({"file": relative, "issue": f"possible secret detected: {label}"})
 
-    release_notes = root / "RELEASE_NOTES.md"
-    if release_notes.is_file():
-        notes = read_text(release_notes)
-        for signal in ("v1.1.0", "100", "80", "20", "70", "attendance", "الحضور", "Notebook 99", "دفتر 99"):
-            if signal.casefold() not in notes.casefold():
-                issues.append({"file": "RELEASE_NOTES.md", "issue": f"missing release signal: {signal}"})
-
     readme = root / "README.md"
     if readme.is_file():
         text = read_text(readme)
@@ -102,13 +94,22 @@ def main() -> int:
             "notebooks/04_explain_calibrate.ipynb",
             "notebooks/05_final_model.ipynb",
             "notebooks/99_final_submission_check.ipynb",
+            "DAILY_LEARNING_PATH.md",
+            "EXPECTED_RESULTS.md",
         ]
         for link in required_links:
             if link not in text:
-                issues.append({"file": "README.md", "issue": f"missing canonical notebook link: {link}"})
-        for signal in ("100", "70", "شهادة اجتياز", "شهادة حضور"):
+                issues.append({"file": "README.md", "issue": f"missing canonical learner link: {link}"})
+        for signal in ("100", "70", "شهادة اجتياز", "شهادة حضور", "Daily answers"):
             if signal not in text:
-                issues.append({"file": "README.md", "issue": f"missing assessment signal: {signal}"})
+                issues.append({"file": "README.md", "issue": f"missing learner-policy signal: {signal}"})
+
+    notes_path = root / "RELEASE_NOTES.md"
+    if notes_path.is_file():
+        notes = read_text(notes_path)
+        for signal in ("v1.1.0", "100", "80", "20", "70", "Notebook 99", "دفتر 99"):
+            if signal.casefold() not in notes.casefold():
+                issues.append({"file": "RELEASE_NOTES.md", "issue": f"missing release signal: {signal}"})
 
     status = "PASS" if not issues else "FAIL"
     report: dict[str, Any] = {
@@ -116,11 +117,8 @@ def main() -> int:
         "issues": issues,
         "required_file_count": len(REQUIRED_FILES),
         "learner_text_file_count": len(LEARNER_TEXT_FILES),
-        "assessment_policy": "project 100 points; attendance controls certificate eligibility",
-        "scope": (
-            "Static pre-release documentation, privacy and consistency check. "
-            "Hosted Colab, visual QA, private evaluation and submission receipt controls remain separate."
-        ),
+        "learner_model": "daily Colab lab + expected result + one README answer + same-day upload",
+        "assessment_policy": "project 100 points; no presentation requirement; attendance controls certificate eligibility",
     }
     output = args.output if args.output.is_absolute() else root / args.output
     output.parent.mkdir(parents=True, exist_ok=True)
