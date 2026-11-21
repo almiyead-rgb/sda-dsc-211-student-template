@@ -1,33 +1,34 @@
-# دليل المتدرب / Student guide
+# Student Guide | دليل المتدرب
 
-المحتوى والتسليم متاحان لجميع الدفعات دون تاريخ إغلاق ثابت. سلّم مشروعك خلال اليومين الرابع والخامس من دورتك، وفق التواريخ والأوقات وطريقة التسليم الخاصة التي تحددها المدربة شفهيًا لدفعتك.
+<!-- BILINGUAL:EN -->
+<!-- BILINGUAL:AR -->
 
-Materials and submission remain available for every cohort, with no fixed closing date. Submit during days 4 and 5 of your course, following the dates, times and private submission method your instructor announces verbally for your cohort.
+## المسار المعتمد
 
-المشروع يتطور عبر خمسة أيام: مقارنة baseline وboosting؛ تحقق صادق وتسرب؛ عدم توازن وقرار بخسارة افتراضية؛ تفسير ومعايرة؛ تجميع وتسليم.
+استخدم الصفحات بالترتيب الآتي:
 
-كل يوم: اقرأ هدف المختبر، شغّل النسخة المعتمدة على CPU، احفظ الأدلة، ثم اكتب تبريرك وحدود النتيجة. عدد النماذج أو أفضل AUC لا يعوض سلامة المنهج. لا تنسخ القيم التوضيحية من الشرائح بوصفها نتائجك.
+1. [ابدأ هنا](START_HERE.md)
+2. [دليل الاستعداد](READINESS_GUIDE.md)
+3. [مسار الأيام الخمسة](DAILY_LEARNING_PATH.md)
+4. [النتائج المرجعية](EXPECTED_RESULTS.md)
+5. [دليل GitHub](GITHUB_GUIDE.md)
+6. [دليل Colab](COLAB_GUIDE.md)
+7. [دليل التسليم](SUBMISSION_GUIDE.md)
+8. [الفحص النهائي](FINAL_CHECK_GUIDE.md)
+9. [سلم التقييم](RUBRIC.md)
 
-احتفظ بإصدارات الملفات وتاريخ التشغيل. لا تُضمّن معلومات شخصية أو أسرارًا. إذا استخدمت ملفات الاستعادة (Recovery)، اذكر مصدرها وما أعدت تشغيله بنفسك.
+## ما تفعله كل يوم
 
-Daily routine: read the goal, run the released lab, save artefacts, and explain your decision. Keep results honest. A documented single-model decision is valid when ensembling offers no convincing benefit.
+```text
+Run all → تنزيل Notebook والنتائج → مقارنة المرجع → إجابة واحدة → رفع GitHub → إرسال الرابط
+```
 
-## ابدأ اليوم الأول
+## ما تفعله في النهاية
 
-افتح [دليل خط الأساس والتعزيز](DAY1_GUIDE.md)، وشغّل ثلاثة نماذج على التقسيم نفسه. اكتب مرشحًا أوليًا مع دليل وقيد وتجربة تالية، واحفظ CSV والرسوم وملاحظاتك. فصل الإيقاف المبكر عن المقارنة خطوة ضرورية؛ التقسيم العشوائي نفسه سيخضع للمراجعة في اليوم الثاني.
+```text
+Day 5 project bundle → رفع المشروع كاملًا → Notebook 99 → Final Project Check → إرسال الرابط النهائي
+```
 
-## انتقل إلى التحقق الصادق
+## English summary
 
-افتح [دليل اليوم الثاني](DAY2_GUIDE.md)، وراجع زمن إتاحة الخصائص ونضج الهدف وفصل العملاء. شغّل البحث المحدود قبل النظر إلى التحقق الخارجي، ثم احفظ تقرير الطيات وتغطيةOOF وفسّر الفروق من نتائجك. لا يشترط أن يحسّن البحث المقاييس، ولا تعدّ الانحراف المعياري فترة ثقة.
-
-## اختر عتبة تستطيع تبريرها
-
-في [اليوم الثالث](DAY3_GUIDE.md) قارن أوزان الفئة وإعادة العينات، ثم اختر عتبة منOOF وفق10FN+FP وسعة12% في كل فترة. احفظ بطاقة القرار بأرقامك وسببك المكتوب، وبلّغ عن الفروق الجغرافية بمقاماتها دون ادعاء عدالة أو اختبار نهائي مستقل.
-
-## فسّر الاحتمال وحدوده
-
-في [اليوم الرابع](DAY4_GUIDE.md) اقرأ التفسير العام والمحلي بوحدةlog-odds، وافحص معايرة تعلمت على عينة منفصلة. وثّق أعداد الحاويات وحدودbootstrap وسعة اتحاد المراجعة. سلّم تقريرًا من نتائجك وإجاباتك، وصرّح بالمثال التعليمي إذا استخدمته.
-
-## اختم بقرار تجميع وتسليم موثق
-
-افتح [دليل اليوم الخامس](DAY5_GUIDE.md). قارن النماذج على OOF متداخل، واقبل الاحتفاظ بالنموذج المفرد عندما يكون التجميع غير مبرر. احفظ بطاقة النموذج والسياسة والتنبؤات وحزمة البصمات، وادمج أدلة أيامك السابقة و[عرضك من خمس شرائح](presentation/FINAL_PRESENTATION_TEMPLATE.md). النتيجة التقنية الناجحة لا تعني اكتمال تفسيرك أو قبول التسليم.
+Follow the linked pages in order. Upload one executed notebook, key outputs and one short answer each day. After Day 5, upload the integrated project, run Notebook 99 and submit the final repository link.

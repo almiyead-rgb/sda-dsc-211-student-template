@@ -5,29 +5,15 @@
 
 ## إنشاء المستودع
 
-1. افتح GitHub واختر `New repository`.
-2. اكتب الاسم: `SDA-DSC-211-StudentCode`.
+1. اختر `New repository`.
+2. استخدم الاسم `SDA-DSC-211-StudentCode`.
 3. اختر `Public`.
 4. فعّل `Add a README file`.
 5. اضغط `Create repository`.
 
-لا يلزم استخدام Template، ولا يلزم استخدام Terminal.
+## تنظيم المشروع
 
-## رفع ملفات اليوم
-
-1. نزّل Notebook المنفذ من Colab.
-2. افتح مستودعك.
-3. اختر `Add file → Upload files`.
-4. ارفع Notebook وملفات النتائج.
-5. اكتب Commit واضحًا، مثل:
-
-```text
-Complete Day 2 validation lab
-```
-
-6. اضغط `Commit changes`.
-
-## تنظيم بسيط
+استخدم هذا التنظيم قبل التسليم النهائي:
 
 ```text
 README.md
@@ -38,13 +24,27 @@ submission/
 tamweel/
 ```
 
-إذا تعذر إنشاء المجلدات في البداية، ارفع الملفات أولًا بأسماء واضحة ثم نظمها لاحقًا قبل التسليم النهائي.
+يمكنك رفع المجلد كاملًا بسحبه إلى صفحة `Upload files`. في الأيام الأولى يكفي رفع Notebook والملفات المطلوبة، ثم تنظيم المشروع كاملًا عند تصدير حزمة اليوم الخامس.
 
-## إجابات الأيام
+## رفع ملفات كل يوم
+
+1. نزّل Notebook وملفات النتائج من Colab.
+2. افتح مستودعك.
+3. اختر `Add file → Upload files`.
+4. ارفع الملفات إلى المسار المطلوب.
+5. اكتب رسالة واضحة، مثل:
+
+```text
+Complete Day 3 decision lab
+```
+
+6. اضغط `Commit changes`.
+
+## كتابة إجابات الأيام
 
 أضف إلى README:
 
-```text
+```markdown
 ## Daily answers | الإجابات اليومية
 
 ### Day 1 | اليوم الأول
@@ -52,16 +52,29 @@ tamweel/
 
 ### Day 2 | اليوم الثاني
 إجابتك...
+
+### Day 3 | اليوم الثالث
+إجابتك...
+
+### Day 4 | اليوم الرابع
+إجابتك...
+
+### Day 5 | اليوم الخامس
+إجابتك...
 ```
 
-## فحص الرابط
+## فحص المستودع
 
-افتح المستودع من نافذة خاصة. إذا طلب صلاحية، فتأكد أنه Public.
+- افتح الرابط من نافذة خاصة.
+- تأكد أن المستودع Public.
+- افتح Notebook وتأكد من ظهور المخرجات.
+- افتح ملفات CSV وJSON وتأكد أنها ليست فارغة.
+- لا ترفع ZIP وحده؛ فك الضغط وارفع الملفات المطلوبة.
 
 ## الأمن
 
-لا ترفع كلمات مرور أو Tokens أو API Keys. لا تستخدم `Save a copy in GitHub` من Colab إذا كان يطلب صلاحيات؛ نزّل الملف وارفعه يدويًا.
+لا ترفع كلمات مرور أو GitHub Tokens أو API Keys أو ملفات `.env` أو بيانات شخصية. لا تربط Colab بحساب GitHub؛ استخدم التنزيل والرفع اليدوي.
 
 ## English summary
 
-Use a normal public repository and browser uploads. Upload the executed notebook, key outputs and one README answer every day. No template, terminal, token or Colab account connection is required.
+Create one normal public repository, upload files through the browser, keep the final folder structure, and add one daily answer to README. No template, terminal, token or Colab–GitHub connection is required.

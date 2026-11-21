@@ -3,323 +3,124 @@
 <!-- BILINGUAL:EN -->
 <!-- BILINGUAL:AR -->
 
-## Access and cost | الوصول والتكلفة
+## البداية والحسابات
 
-<table>
-<tr>
-<td width="50%" valign="top" dir="ltr">
+### هل أحتاج إلى اشتراك مدفوع أو GPU؟
 
-### Do I need to pay?
-
-No. The required learner path uses free Google Colab CPU, a free GitHub account and open-source Python packages. You do not need a GPU, paid API, credit card or cloud subscription.
-
-If a free-service quota is temporarily unavailable, save your work and retry later. Do not purchase compute for this course.
-
-### Do I need to install Python?
-
-No. The assessed path runs in Colab. Local Python is optional and is not required for completion.
-
-</td>
-<td width="50%" valign="top" dir="rtl">
-
-### هل أحتاج إلى الدفع؟
-
-لا. يستخدم مسار المتدرب المطلوب CPU المجاني في Google Colab وحساب GitHub مجانيًا وحزم Python مفتوحة المصدر. لا تحتاج إلى GPU أو API مدفوع أو بطاقة دفع أو اشتراك سحابي.
-
-إذا تعذرت الحصة المجانية مؤقتًا، فاحفظ عملك وأعد المحاولة لاحقًا. لا تشترِ موارد حوسبة لهذه الدورة.
+لا. جميع اللابات مصممة للعمل على CPU المجاني في Google Colab.
 
 ### هل أحتاج إلى تثبيت Python؟
 
-لا. يعمل المسار المقيم في Colab. التثبيت المحلي اختياري وليس شرطًا لإكمال الدورة.
-
-</td>
-</tr>
-</table>
-
-## Accounts and privacy | الحسابات والخصوصية
-
-<table>
-<tr>
-<td width="50%" valign="top" dir="ltr">
-
-### Which accounts are required?
-
-A free Google account for Colab and a free GitHub account for the project repository.
-
-### Can I publish my full name or personal data?
-
-Do not publish national IDs, phone numbers, private email addresses, passwords, access tokens, private grades or submission receipts. Use the Student Code required by your cohort.
-
-### Should my repository be public or private?
-
-Follow the written cohort policy. The instructor must be able to access the submitted repository. Never assume that a private repository is accessible unless access has been confirmed.
-
-</td>
-<td width="50%" valign="top" dir="rtl">
+لا. يعمل المسار المطلوب داخل المتصفح.
 
 ### ما الحسابات المطلوبة؟
 
-حساب Google مجاني لتشغيل Colab وحساب GitHub مجاني لحفظ مستودع المشروع.
+حساب Google مجاني وحساب GitHub مجاني.
 
-### هل أستطيع نشر اسمي الكامل أو بياناتي الشخصية؟
+### هل أستخدم GitHub Template؟
 
-لا تنشر رقم الهوية أو رقم الهاتف أو البريد الخاص أو كلمات المرور أو رموز الوصول أو الدرجات الخاصة أو إيصالات التسليم. استخدم Student Code المعتمد لدفعتك.
+لا. أنشئ مستودعًا عاديًا وأضف README، ثم ارفع الملفات يدويًا.
 
-### هل يكون المستودع عامًا أم خاصًا؟
+## Colab
 
-اتبع سياسة الدفعة المكتوبة. يجب أن تتمكن المدربة من الوصول إلى المستودع المسلّم. لا تفترض أن المستودع الخاص متاح قبل تأكيد الصلاحية.
+### أي Runtime أختار؟
 
-</td>
-</tr>
-</table>
-
-## Learning path | مسار التعلم
-
-<table>
-<tr>
-<td width="50%" valign="top" dir="ltr">
-
-### Where do I start?
-
-Read [START_HERE.md](START_HERE.md), complete [READINESS_GUIDE.md](READINESS_GUIDE.md), then run Notebook 00 before Day 1.
-
-### Are the five labs separate projects?
-
-No. They are five progressive stages of one Tamweel Lite project. You submit one complete final repository.
-
-### I am a beginner. Can I complete the project?
-
-Yes, if you complete the readiness path, follow the Core Path, use `FAST_MODE=True`, run cells in order and read the interpretation prompts. Optional advanced material is not required unless the instructor states otherwise.
-
-### Can I skip a day and run Day 5 directly?
-
-The notebooks can rebuild required course inputs, but the final assessment requires the evidence and learner reasoning from all five days. Skipping daily work will leave the repository incomplete.
-
-</td>
-<td width="50%" valign="top" dir="rtl">
-
-### من أين أبدأ؟
-
-اقرأ [START_HERE.md](START_HERE.md)، ثم أكمل [READINESS_GUIDE.md](READINESS_GUIDE.md)، وشغّل دفتر 00 قبل اليوم الأول.
-
-### هل اللابات الخمسة مشروعات منفصلة؟
-
-لا. هي خمس مراحل تراكمية لمشروع Tamweel Lite واحد. ويُسلّم مستودع نهائي كامل مرة واحدة.
-
-### أنا مبتدئ. هل أستطيع إكمال المشروع؟
-
-نعم، إذا أكملت مسار الاستعداد، واتبعت Core Path، واستخدمت `FAST_MODE=True`، وشغلت الخلايا بالترتيب، وقرأت أسئلة تفسير النتائج. المحتوى المتقدم الاختياري غير مطلوب ما لم تعلن المدربة خلاف ذلك.
-
-### هل أستطيع تجاوز يوم وتشغيل اليوم الخامس مباشرة؟
-
-تستطيع الدفاتر إعادة بناء بعض مدخلات الدورة، لكن التقييم النهائي يتطلب أدلة وتفسير المتدرب من جميع الأيام الخمسة. تجاوز العمل اليومي سيجعل المستودع ناقصًا.
-
-</td>
-</tr>
-</table>
-
-## Colab and execution | Colab والتنفيذ
-
-<table>
-<tr>
-<td width="50%" valign="top" dir="ltr">
-
-### Which runtime should I use?
-
-Use the free CPU runtime. Do not enable GPU or TPU.
-
-### What does `FAST_MODE=True` mean?
-
-It uses the approved teaching-size configuration so the lab finishes reliably on free CPU. It does not change the learning objectives.
-
-### Colab disconnected. Did I lose everything?
-
-Runtime variables and temporary files may be lost. Reopen your saved notebook, run from the beginning and regenerate outputs. Files already committed to GitHub remain available.
-
-### Can I use Google Drive?
-
-The course does not require a Drive mount. Do not grant Drive access unless a specific approved instruction is published.
-
-### Can I ignore a checksum mismatch?
-
-No. Restore the approved file or reopen the released notebook. A checksum failure means the expected source cannot be verified.
-
-</td>
-<td width="50%" valign="top" dir="rtl">
-
-### أي Runtime أستخدم؟
-
-استخدم CPU المجاني. لا تفعّل GPU أو TPU.
+استخدم CPU أو `None` تحت Hardware accelerator.
 
 ### ماذا يعني `FAST_MODE=True`؟
 
-يستخدم إعدادًا تعليميًا معتمدًا بحجم مناسب حتى يكتمل اللاب بثبات على CPU المجاني. ولا يغير أهداف التعلم.
+هو الإعداد المعتمد لإنهاء اللاب على CPU المجاني. اتركه كما هو.
 
-### انقطعت جلسة Colab. هل فقدت كل شيء؟
+### انقطعت الجلسة، ماذا أفعل؟
 
-قد تضيع المتغيرات والملفات المؤقتة. افتح الدفتر المحفوظ، وشغّل من البداية، وأعد توليد المخرجات. أما الملفات المحفوظة في GitHub فتبقى موجودة.
+افتح Notebook من جديد وشغّل `Run all` من البداية، ثم نزّل الملفات مرة أخرى.
 
-### هل أستطيع استخدام Google Drive؟
+### هل أربط Drive أو GitHub؟
 
-لا تتطلب الدورة ربط Drive. لا تمنح صلاحية Drive ما لم تصدر تعليمات معتمدة ومحددة.
+لا. نزّل الملفات إلى جهازك وارفعها يدويًا إلى GitHub.
 
-### هل أستطيع تجاهل Checksum mismatch؟
+## المشروع اليومي
 
-لا. استرجع الملف المعتمد أو أعد فتح الدفتر المنشور. يعني فشل البصمة أن المصدر المتوقع لم يعد قابلًا للتحقق.
+### هل كل يوم مشروع مستقل؟
 
-</td>
-</tr>
-</table>
+لا. كل يوم مرحلة من مشروع Tamweel Lite نفسه.
 
-## Models, metrics and decisions | النماذج والمقاييس والقرارات
+### ماذا أسلّم يوميًا؟
 
-<table>
-<tr>
-<td width="50%" valign="top" dir="ltr">
+Notebook منفذ، والملفات الرئيسة، وإجابة سؤال اليوم داخل README، ثم ترسل الرابط في اليوم نفسه.
 
-### Is the highest ROC-AUC model always the best?
+### هل التسليم اليومي له درجة مستقلة؟
 
-No. The project also assesses honest validation, Average Precision, calibration, simulated decision loss, capacity, stability, reproducibility, interpretability and limitations.
+لا. يثبت التقدم ويدخل ضمن اكتمال المتطلبات الإدارية، والتقييم الرسمي يتم مرة واحدة على المشروع النهائي.
 
-### Does a lower simulated decision loss always prove a better real-world model?
+### هل يمكن تجاوز يوم؟
 
-No. The loss is an educational policy metric based on the stated `10 × FN + 1 × FP` assumption. It is not Saudi riyals, expected credit loss or a complete business case.
+لا ينصح بذلك؛ المشروع النهائي يعتمد على أدلة الأيام الخمسة وإجاباتها.
 
-### Does SHAP prove why a customer defaulted?
+## النتائج
 
-No. SHAP explains the fitted model’s output. It does not establish causality, fairness, legality or the effect of a protected trait.
+### هل يجب أن تطابق أرقامي المرجع تمامًا؟
 
-### Must an ensemble be used?
+لا. قارن أسماء الملفات وأعداد الصفوف وحالات التشغيل. قد تختلف المقاييس قليلًا حسب البيئة.
 
-No. `KEEP SINGLE MODEL` is a valid professional conclusion when the ensemble gain does not exceed validation noise, calibration cost or operational complexity.
+### هل يجب أن أختار Logistic أو KEEP SINGLE؟
 
-</td>
-<td width="50%" valign="top" dir="rtl">
+لا. اتبع نتيجة تشغيلك بشرط أن يكون القرار مدعومًا بالأدلة وقابلًا لإعادة الإنتاج.
 
-### هل النموذج الأعلى في ROC-AUC هو الأفضل دائمًا؟
+### هل SHAP يثبت سبب التعثر؟
 
-لا. يقيم المشروع أيضًا التحقق الصادق وAverage Precision والمعايرة وتكلفة القرار التعليمية والسعة والاستقرار وقابلية إعادة الإنتاج والتفسير والقيود.
+لا. يفسر مخرج النموذج ولا يثبت السببية أو العدالة أو الامتثال.
 
-### هل انخفاض تكلفة القرار التعليمية يثبت دائمًا أن النموذج أفضل في الواقع؟
+### هل العتبة 0.5 هي الأفضل دائمًا؟
 
-لا. التكلفة مقياس سياسة تعليمي قائم على افتراض `10 × FN + 1 × FP`. وليست ريالات سعودية أو خسارة ائتمانية متوقعة أو دراسة أعمال كاملة.
+لا. يختار المشروع العتبة وفق تكلفة القرار التعليمية وسعة المراجعة.
 
-### هل يثبت SHAP سبب تعثر العميل؟
+## التسليم النهائي
 
-لا. يفسر SHAP مخرج النموذج المدرّب، ولا يثبت السببية أو العدالة أو المشروعية أو أثر سمة محمية.
+### هل يوجد عرض تقديمي؟
 
-### هل يجب استخدام Ensemble؟
+لا يوجد عرض تقديمي إلزامي.
 
-لا. يُعد قرار `KEEP SINGLE MODEL` نتيجة مهنية صحيحة عندما لا يتجاوز مكسب التجميع ضوضاء التحقق أو تكلفة المعايرة أو التعقيد التشغيلي.
+### هل أعبئ قوالب تقارير؟
 
-</td>
-</tr>
-</table>
+لا. تنشئ اللابات التقارير الفنية المطلوبة، وتكتب أنت إجابة قصيرة لكل يوم في README.
 
-## Assessment | التقييم
+### هل يلزم Tag أو Commit SHA؟
 
-<table>
-<tr>
-<td width="50%" valign="top" dir="ltr">
+لا يلزم ذلك في مسار التسليم المبسط. أرسل رابط المستودع النهائي فقط عبر القناة الخاصة.
 
-### How is the grade distributed?
+### هل Notebook 99 يمنح درجة؟
 
-- Project technical and administrative requirements: 90 points.
-- Presentation and discussion: 10 points.
-- Pass: 70/100.
-- Distinction: 95/100.
+لا. يفحص اكتمال المشروع تقنيًا، ولا يمنح درجة.
 
-Read [RUBRIC.md](RUBRIC.md). Integrity gates can require correction even when the numerical score is otherwise high.
+### ماذا أرسل في النهاية؟
 
-### Does a green GitHub Action give me a grade?
+الاسم، رمز المتدرب، ورابط المستودع النهائي.
 
-No. It confirms automated technical conditions only. The instructor evaluates the evidence, reasoning, reports and oral discussion.
-
-### Are the readiness questions graded?
-
-No. Learner responses inside the assessed daily labs and final reports are graded according to the rubric.
-
-</td>
-<td width="50%" valign="top" dir="rtl">
+## التقييم والشهادة
 
 ### كيف توزع الدرجة؟
 
-- المتطلبات التقنية والإدارية للمشروع: 90 درجة.
-- العرض والمناقشة: 10 درجات.
-- النجاح: 70 من 100.
-- التميز: 95 من 100.
+80 درجة للمتطلبات التقنية و20 درجة للمتطلبات الإدارية، والمجموع 100.
 
-اقرأ [RUBRIC.md](RUBRIC.md). قد تتطلب بوابات النزاهة التصحيح حتى لو كانت الدرجة العددية مرتفعة.
+### ما درجة الاجتياز؟
 
-### هل تمنحني العلامة الخضراء في GitHub Actions درجة؟
+70 من 100، مع استيفاء متطلبات الحضور.
 
-لا. تؤكد فقط نجاح شروط تقنية آلية. وتقيّم المدربة الأدلة والتفسير والتقارير والمناقشة الشفهية.
+### ما نوع الشهادة؟
 
-### هل أسئلة الاستعداد محسوبة؟
+استيفاء الحضور ومشروع بدرجة 70 فأعلى يمنح شهادة اجتياز من سدايا. استيفاء الحضور دون مشروع، أو بدرجة أقل من 70، يمنح شهادة حضور فقط.
 
-لا. أما استجابات المتدرب داخل لابات الأيام والتقارير النهائية فتُقيّم وفق السلم.
+## الأمن
 
-</td>
-</tr>
-</table>
+### هل أضع اسمي وبياناتي؟
 
-## Submission | التسليم
+استخدم رمز المتدرب. لا تنشر رقم الهوية أو الهاتف أو البريد الخاص أو الدرجات.
 
-<table>
-<tr>
-<td width="50%" valign="top" dir="ltr">
+### ماذا يمنع رفعه؟
 
-### Where do I submit?
+كلمات المرور، Tokens، API Keys، ملفات `.env`، بيانات عملاء أو جهة عمل، أو أي ملف غير مصرح بنشره.
 
-Use the private channel published in writing for your cohort. Do not create a public issue containing your name, grade or submission receipt.
+## English summary
 
-### What is submitted?
-
-Repository URL, final tag, exact full commit SHA, final-check URL, presentation PDF and the required declaration or receipt fields.
-
-### Do I submit five times?
-
-No. The project is built daily and submitted once as a complete final repository.
-
-### Can I change the project after submission?
-
-Do not rewrite the evaluated commit or move its tag. An approved resubmission uses a new commit, a new tag and a new private receipt.
-
-### Is Notebook 99 a submission receipt?
-
-No. Notebook 99 checks technical completeness. The private submission record is the receipt.
-
-</td>
-<td width="50%" valign="top" dir="rtl">
-
-### أين أُسلّم؟
-
-استخدم القناة الخاصة التي تُنشر كتابةً لدفعتك. لا تنشئ Issue عامة تتضمن اسمك أو درجتك أو إيصال التسليم.
-
-### ما الذي أرسله؟
-
-رابط المستودع وTag النهائي وCommit SHA الكامل ورابط الفحص النهائي وملف العرض PDF وحقول الإقرار أو الإيصال المطلوبة.
-
-### هل أُسلّم خمس مرات؟
-
-لا. يُبنى المشروع يوميًا ويُسلّم مرة واحدة كمستودع نهائي كامل.
-
-### هل أستطيع تعديل المشروع بعد التسليم؟
-
-لا تعِد كتابة Commit المقيم ولا تنقل Tag الخاص به. تستخدم إعادة التسليم المعتمدة Commit جديدًا وTag جديدًا وإيصالًا خاصًا جديدًا.
-
-### هل دفتر 99 إيصال تسليم؟
-
-لا. يفحص دفتر 99 الاكتمال التقني. سجل التسليم الخاص هو الإيصال.
-
-</td>
-</tr>
-</table>
-
-## Help | المساعدة
-
-- [Start here | ابدأ هنا](START_HERE.md)
-- [Colab guide | دليل Colab](COLAB_GUIDE.md)
-- [GitHub guide | دليل GitHub](GITHUB_GUIDE.md)
-- [Troubleshooting | حل المشكلات](TROUBLESHOOTING.md)
-- [Submission guide | دليل التسليم](SUBMISSION_GUIDE.md)
+Use free Colab CPU and one public GitHub repository. Upload one executed notebook, key outputs and one short answer each day. No template, presentation, manual report form, token, tag or commit SHA is required. The final project is graded once out of 100.

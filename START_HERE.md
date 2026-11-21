@@ -3,31 +3,57 @@
 <!-- BILINGUAL:EN -->
 <!-- BILINGUAL:AR -->
 
-## أسهل مسار للمتدرب
+## ابدأ بهذه الخطوات فقط
 
-1. أنشئ مستودع GitHub جديدًا باسم `SDA-DSC-211-StudentCode`.
-2. اجعله `Public` وأضف ملف README.
-3. لا تستخدم Template إذا سبب لك مشكلة.
-4. لا تربط Colab بحساب GitHub ولا تمنحه Token.
-5. افتح Notebook اليوم من [مسار التعلم اليومي](DAILY_LEARNING_PATH.md).
-6. اختر CPU المجاني ثم `Runtime → Run all`.
-7. نزّل Notebook بصيغة `.ipynb` وارفعه يدويًا إلى GitHub.
-8. ارفع ملفات النتائج الأساسية.
-9. أجب عن سؤال اليوم داخل README.
-10. أرسل رابط Notebook اليوم عبر القناة المعتمدة.
+### 1. جهّز حساباتك
 
-## الروابط الأساسية
+تحتاج إلى:
 
-- [مسار الأيام الخمسة](DAILY_LEARNING_PATH.md)
-- [النتائج المتوقعة](EXPECTED_RESULTS.md)
-- [دليل Colab](COLAB_GUIDE.md)
-- [دليل GitHub المبسط](GITHUB_GUIDE.md)
-- [دليل التسليم](SUBMISSION_GUIDE.md)
+- حساب Google مجاني لتشغيل Colab.
+- حساب GitHub مجاني لحفظ المشروع.
+- متصفح حديث واتصال بالإنترنت.
 
-## ممنوعات الأمن
+لا تحتاج إلى اشتراك مدفوع أو GPU أو API Key أو تثبيت Python على جهازك.
 
-لا ترفع كلمات مرور أو Tokens أو API Keys أو ملفات `.env` أو أرقام هوية أو بيانات عملاء أو بيانات جهة عمل حقيقية.
+### 2. أنشئ مستودع المشروع
+
+1. افتح GitHub واختر `New repository`.
+2. استخدم الاسم `SDA-DSC-211-StudentCode`.
+3. اختر `Public`.
+4. فعّل `Add a README file`.
+5. اضغط `Create repository`.
+
+لا تستخدم Template، ولا تربط Colab بحساب GitHub، ولا تمنح أي Token.
+
+### 3. افحص الاستعداد
+
+افتح [Notebook 00](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/00_readiness_check.ipynb)، واختر CPU المجاني، ثم نفّذ `Runtime → Run all`.
+
+أنت جاهز عندما:
+
+- يكتمل التشغيل من دون أخطاء حمراء.
+- تستطيع تنزيل Notebook بصيغة `.ipynb`.
+- تستطيع رفع ملف إلى GitHub من المتصفح.
+
+### 4. اتبع الدورة بهذا الترتيب
+
+1. [مسار التعلم اليومي](DAILY_LEARNING_PATH.md)
+2. [دليل Colab](COLAB_GUIDE.md)
+3. [دليل GitHub](GITHUB_GUIDE.md)
+4. [النتائج المرجعية](EXPECTED_RESULTS.md)
+5. [دليل التسليم](SUBMISSION_GUIDE.md)
+6. [الفحص النهائي](FINAL_CHECK_GUIDE.md)
+
+## القاعدة اليومية
+
+```text
+افتح لاب اليوم → Run all → نزّل الملفات → قارن النتائج → أجب → ارفع إلى GitHub
+```
+
+## الأمن
+
+لا ترفع كلمة مرور أو Token أو API Key أو ملف `.env` أو بيانات شخصية أو بيانات حقيقية لجهة عمل.
 
 ## English summary
 
-Create a normal public repository, run each Colab notebook, download it, upload it manually with the generated outputs, and answer one short daily question in README. No GitHub template, Colab–GitHub connection, presentation or manual report template is required.
+Create a normal public GitHub repository, run Notebook 00 on free Colab CPU, then follow the five-day path. Download files from Colab and upload them manually through the GitHub browser. No template, token, Colab–GitHub connection, presentation or manual report form is required.
