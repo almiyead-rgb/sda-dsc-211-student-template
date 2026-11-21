@@ -1,9 +1,7 @@
 """Validate the bilingual learner repository as a release candidate.
 
-This check is intentionally conservative. It verifies documentation consistency,
-forbidden wording, obvious secret patterns, required release files and the absence
-of unfinished placeholders. It does not replace hosted-Colab acceptance, the
-private evaluator or instructor review.
+This check verifies documentation consistency, forbidden wording, obvious secret
+patterns, required release files and the absence of unfinished placeholders.
 """
 from __future__ import annotations
 
@@ -14,35 +12,17 @@ from pathlib import Path
 from typing import Any
 
 REQUIRED_FILES = [
-    "README.md",
-    "START_HERE.md",
-    "READINESS_GUIDE.md",
-    "COLAB_GUIDE.md",
-    "GITHUB_GUIDE.md",
-    "FAQ.md",
-    "TROUBLESHOOTING.md",
-    "LEARNING_RESOURCES.md",
-    "GLOSSARY.md",
-    "DAY1_GUIDE.md",
-    "DAY2_GUIDE.md",
-    "DAY3_GUIDE.md",
-    "DAY4_GUIDE.md",
-    "DAY5_GUIDE.md",
-    "FINAL_CHECK_GUIDE.md",
-    "TECHNICAL_REQUIREMENTS.md",
-    "ADMINISTRATIVE_REQUIREMENTS.md",
-    "RUBRIC.md",
-    "SUBMISSION_GUIDE.md",
-    "COURSE_ALIGNMENT.md",
-    "RELEASE_NOTES.md",
-    "content/bilingual_manifest.yml",
-    "release/release_scope.json",
+    "README.md", "START_HERE.md", "READINESS_GUIDE.md", "COLAB_GUIDE.md",
+    "GITHUB_GUIDE.md", "FAQ.md", "TROUBLESHOOTING.md", "LEARNING_RESOURCES.md",
+    "GLOSSARY.md", "DAY1_GUIDE.md", "DAY2_GUIDE.md", "DAY3_GUIDE.md",
+    "DAY4_GUIDE.md", "DAY5_GUIDE.md", "FINAL_CHECK_GUIDE.md",
+    "TECHNICAL_REQUIREMENTS.md", "ADMINISTRATIVE_REQUIREMENTS.md", "RUBRIC.md",
+    "SUBMISSION_GUIDE.md", "COURSE_ALIGNMENT.md", "RELEASE_NOTES.md",
+    "content/bilingual_manifest.yml", "release/release_scope.json",
 ]
 
 LEARNER_TEXT_FILES = [
-    path
-    for path in REQUIRED_FILES
-    if path.endswith(".md") and not path.startswith("docs/")
+    path for path in REQUIRED_FILES if path.endswith(".md") and not path.startswith("docs/")
 ]
 
 FORBIDDEN_PHRASES = {
@@ -51,6 +31,8 @@ FORBIDDEN_PHRASES = {
     "الخسارة الافتراضية": "use تكلفة القرار التعليمية",
     "guaranteed error-free": "do not promise zero execution errors",
     "مضمون بلا أخطاء": "لا تعد بضمان مطلق لعدم وجود أخطاء",
+    "90 project points + 10 presentation points": "use the 100-point project policy",
+    "90 درجة للمشروع + 10 درجات للعرض": "استخدم سياسة المشروع من 100 درجة",
 }
 
 PLACEHOLDER_PATTERNS = [
@@ -76,11 +58,7 @@ def read_text(path: Path) -> str:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path.cwd())
-    parser.add_argument(
-        "--output",
-        type=Path,
-        default=Path("check-output/release-candidate.json"),
-    )
+    parser.add_argument("--output", type=Path, default=Path("check-output/release-candidate.json"))
     args = parser.parse_args()
     root = args.root.resolve()
     issues: list[dict[str, str]] = []
@@ -109,8 +87,8 @@ def main() -> int:
     release_notes = root / "RELEASE_NOTES.md"
     if release_notes.is_file():
         notes = read_text(release_notes)
-        for signal in ("v1.1.0", "90", "10", "Notebook 99", "دفتر 99"):
-            if signal not in notes:
+        for signal in ("v1.1.0", "100", "80", "20", "70", "attendance", "الحضور", "Notebook 99", "دفتر 99"):
+            if signal.casefold() not in notes.casefold():
                 issues.append({"file": "RELEASE_NOTES.md", "issue": f"missing release signal: {signal}"})
 
     readme = root / "README.md"
@@ -128,6 +106,9 @@ def main() -> int:
         for link in required_links:
             if link not in text:
                 issues.append({"file": "README.md", "issue": f"missing canonical notebook link: {link}"})
+        for signal in ("100", "70", "شهادة اجتياز", "شهادة حضور"):
+            if signal not in text:
+                issues.append({"file": "README.md", "issue": f"missing assessment signal: {signal}"})
 
     status = "PASS" if not issues else "FAIL"
     report: dict[str, Any] = {
@@ -135,6 +116,7 @@ def main() -> int:
         "issues": issues,
         "required_file_count": len(REQUIRED_FILES),
         "learner_text_file_count": len(LEARNER_TEXT_FILES),
+        "assessment_policy": "project 100 points; attendance controls certificate eligibility",
         "scope": (
             "Static pre-release documentation, privacy and consistency check. "
             "Hosted Colab, visual QA, private evaluation and submission receipt controls remain separate."
