@@ -1,4 +1,9 @@
-"""Execute each lab in a fresh kernel/workspace; original learner files are read only."""
+"""Execute every course notebook in an isolated fresh kernel.
+
+This is a technical execution check. The five required learner answers live in the
+repository README; legacy reflection fields inside executable cells are retained
+only for compatibility and do not block technical completion.
+"""
 import argparse
 from pathlib import Path
 import json
