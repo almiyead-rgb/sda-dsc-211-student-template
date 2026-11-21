@@ -1,12 +1,14 @@
 """Align learner-facing notebook Markdown with the one-question daily workflow.
 
-Executable cells are preserved byte-for-byte. The script removes old multi-response
-instructions from Markdown, adds one official instruction near the top, and adds
-one required question at the end of each Day 1–5 notebook.
+The generator always starts from the current ``origin/main`` notebook so an earlier
+conversion cannot accumulate or erase instructional content. Executable cells are
+preserved byte-for-byte. Only learner-facing Markdown is adjusted.
 """
 from __future__ import annotations
 
 import json
+import re
+import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -58,12 +60,25 @@ PROMPT_SIGNALS = (
     "exit answers",
     "write your argument",
     "complete the responses",
+    "respond to",
+    "answer the following",
     "نقطة تعلم",
     "إجابات المتدرب",
     "امتلك قرارك",
     "اكتب قرارك",
     "أكمل الإجابات",
     "أسئلة الخروج",
+    "أجب عن",
+)
+
+PROMPT_CELL_ID_SIGNALS = (
+    "reflection",
+    "responses",
+    "response",
+    "learner-answer",
+    "learner-response",
+    "decision-writing",
+    "exit-question",
 )
 
 REPLACEMENTS = {
@@ -89,7 +104,8 @@ def paired_box(en_heading: str, en_body: str, ar_heading: str, ar_body: str) -> 
 </td>
 </tr>
 </table>'''
-    return [line + "\n" for line in html.splitlines()[:-1]] + [html.splitlines()[-1]]
+    lines = html.splitlines()
+    return [line + "\n" for line in lines[:-1]] + [lines[-1]]
 
 
 def official_instruction(day: int) -> dict:
@@ -105,7 +121,7 @@ def official_instruction(day: int) -> dict:
         },
         "source": paired_box(
             "Official daily requirement",
-            "Run all cells, compare the generated files with EXPECTED_RESULTS.md, then answer only the single question at the end of this notebook in your repository README. Additional legacy reflection variables inside code cells are compatibility fields; leave them unchanged.",
+            "Run all cells, compare the generated files with EXPECTED_RESULTS.md, then answer only the single question at the end of this notebook in your repository README. Legacy reflection variables inside code cells are compatibility fields; leave them unchanged.",
             "المطلوب اليومي المعتمد",
             "شغّل جميع الخلايا، وقارن الملفات الناتجة بصفحة EXPECTED_RESULTS.md، ثم أجب فقط عن السؤال الواحد في نهاية هذا الدفتر داخل README في مستودعك. حقول الانعكاس القديمة داخل خلايا الكود مخصصة للتوافق؛ اتركها دون تعديل.",
         ),
@@ -126,9 +142,9 @@ def neutral_checkpoint(day: int, index: int, metadata: dict, cell_id: str) -> di
         "metadata": clean_metadata,
         "source": paired_box(
             "Review the evidence",
-            "Read the output produced by the previous code cell and keep the generated files. No answer is required in this cell; the only required answer appears at the end of the notebook.",
+            "Read the generated output and keep the exported files. No answer is required here; the only required answer appears at the end of the notebook.",
             "راجع الأدلة",
-            "اقرأ المخرجات التي أنشأتها خلية الكود السابقة واحتفظ بالملفات الناتجة. لا تكتب إجابة في هذه الخلية؛ الإجابة الوحيدة المطلوبة موجودة في نهاية الدفتر.",
+            "اقرأ المخرجات الناتجة واحتفظ بالملفات المصدرة. لا تكتب إجابة هنا؛ الإجابة الوحيدة المطلوبة موجودة في نهاية الدفتر.",
         ),
     }
 
@@ -153,43 +169,73 @@ def final_question(day: int, item: dict) -> dict:
     }
 
 
+def source_notebook(relative_path: str) -> dict:
+    """Read the unconverted notebook from main, not from the working branch."""
+    raw = subprocess.check_output(
+        ["git", "show", f"origin/main:{relative_path}"],
+        cwd=ROOT,
+    )
+    return json.loads(raw.decode("utf-8"))
+
+
+def contains_prompt(text: str) -> bool:
+    lowered = text.casefold()
+    return any(signal.casefold() in lowered for signal in PROMPT_SIGNALS)
+
+
+def strip_prompt_fragments(text: str) -> str:
+    """Remove only prompt paragraphs/list items while preserving the explanation."""
+    patterns = (
+        re.compile(r"<p\b[^>]*>.*?</p>", re.IGNORECASE | re.DOTALL),
+        re.compile(r"<li\b[^>]*>.*?</li>", re.IGNORECASE | re.DOTALL),
+    )
+    for pattern in patterns:
+        text = pattern.sub(
+            lambda match: "" if contains_prompt(match.group(0)) else match.group(0),
+            text,
+        )
+    cleaned_lines = []
+    for line in text.splitlines():
+        if contains_prompt(line) and not any(tag in line.lower() for tag in ("<h1", "<h2", "<h3")):
+            continue
+        cleaned_lines.append(line)
+    text = "\n".join(cleaned_lines)
+    for old, new in REPLACEMENTS.items():
+        text = text.replace(old, new)
+    return re.sub(r"\n{3,}", "\n\n", text).strip()
+
+
 def simplify(day: int, item: dict) -> bool:
     path = ROOT / item["path"]
-    notebook = json.loads(path.read_text(encoding="utf-8"))
-    cells = notebook["cells"]
-
-    # Remove a previous generated instruction/question before rebuilding.
-    cells = [
-        cell for cell in cells
-        if cell.get("id") not in {
-            f"day{day}-official-daily-task",
-            f"day{day}-single-daily-question",
-        }
-    ]
-
+    notebook = source_notebook(item["path"])
     rebuilt = []
-    instruction_added = False
     prompt_index = 0
-    for cell in cells:
+
+    for index, cell in enumerate(notebook["cells"]):
         if cell.get("cell_type") == "markdown":
+            cell_id = cell.get("id", f"day{day}-markdown-{index}")
             text = "".join(cell.get("source", []))
-            lowered = text.casefold()
-            if any(signal.casefold() in lowered for signal in PROMPT_SIGNALS):
+            cell_id_lower = cell_id.casefold()
+            dedicated_prompt = (
+                contains_prompt(text)
+                and any(signal in cell_id_lower for signal in PROMPT_CELL_ID_SIGNALS)
+            )
+            if dedicated_prompt:
                 prompt_index += 1
                 cell = neutral_checkpoint(
                     day,
                     prompt_index,
                     cell.get("metadata", {}),
-                    cell.get("id", f"day{day}-review-{prompt_index}"),
+                    cell_id,
                 )
             else:
-                for old, new in REPLACEMENTS.items():
-                    text = text.replace(old, new)
-                cell["source"] = [line + "\n" for line in text.splitlines()[:-1]] + ([text.splitlines()[-1]] if text.splitlines() else [])
+                text = strip_prompt_fragments(text)
+                lines = text.splitlines()
+                cell["source"] = [line + "\n" for line in lines[:-1]] + ([lines[-1]] if lines else [])
+                cell.setdefault("metadata", {})["content_version"] = "1.2.0"
         rebuilt.append(cell)
-        if not instruction_added and cell.get("cell_type") == "markdown":
+        if index == 0:
             rebuilt.append(official_instruction(day))
-            instruction_added = True
 
     rebuilt.append(final_question(day, item))
     notebook["cells"] = rebuilt
