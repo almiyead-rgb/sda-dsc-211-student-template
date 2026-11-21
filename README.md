@@ -16,6 +16,8 @@
 
 تبني مشروع **Tamweel Lite** تدريجيًا. في كل يوم تتعلم مفهومًا، وتشغّل لابًا على Google Colab، وتقارن مخرجاتك بالنتائج المرجعية، وتجيب عن سؤال واحد، ثم ترفع عمل اليوم إلى مستودعك في GitHub.
 
+داخل كل Notebook من 01 إلى 05 يظهر في نهايته **سؤال اليوم الرسمي الوحيد**. تُكتب الإجابة داخل README في مستودعك، ولا تُعبّأ حقول الانعكاس القديمة الموجودة في بعض خلايا الكود؛ فهي محفوظة للتوافق التقني فقط.
+
 ```text
 تعلم → شغّل Colab → قارن النتائج → أجب → ارفع يوميًا
                                       ↓
@@ -80,4 +82,4 @@
 
 ## English summary
 
-Complete one Colab lab each day, compare your generated outputs with the reference page, answer one short question in README, and upload the executed notebook and key files on the same day. Day 5 exports the integrated project. Run Notebook 99 and the Final Project Check before the single final submission.
+Complete one Colab lab each day, compare your generated outputs with the reference page, answer the single official question shown at the end of the notebook in README, and upload the executed notebook and key files on the same day. Legacy reflection variables in code cells are compatibility fields only. Day 5 exports the integrated project. Run Notebook 99 and the Final Project Check before the single final submission.
