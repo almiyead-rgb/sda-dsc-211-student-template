@@ -26,6 +26,7 @@
 
 | Day | Lab | What you build | سؤال التسليم اليومي |
 |---:|---|---|---|
+| 0 | [Readiness Notebook](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/00_readiness_check.ipynb) | فحص البيئة والحسابات والملفات | هل بيئتك جاهزة دون أخطاء حمراء؟ |
 | 1 | [Colab 01](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/01_baseline_boosting.ipynb) | مقارنة Logistic Regression وXGBoost وLightGBM | أي نموذج اخترت مبدئيًا، وما الدليل الأقوى من نتائجك؟ |
 | 2 | [Colab 02](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/02_validation_tuning.ipynb) | تحقق زمني ومنع التسرب وضبط محدود | ما مثال التسرب الذي اكتشفته، وكيف منعته؟ |
 | 3 | [Colab 03](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/03_cost_sensitive_decision.ipynb) | عتبة قرار تراعي التكلفة والسعة | لماذا لا تكفي العتبة 0.5 دائمًا؟ |
