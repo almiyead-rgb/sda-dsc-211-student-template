@@ -3,62 +3,68 @@
 <!-- BILINGUAL:EN -->
 <!-- BILINGUAL:AR -->
 
-## قبل التصحيح النهائي
+## نفّذ هذا الفحص قبل إرسال الرابط النهائي
 
-التصحيح الرسمي يتم مرة واحدة؛ لذلك نفّذ هذه القائمة قبل إرسال المشروع:
+### 1. الدفاتر
 
-### 1. الأيام الخمسة
+- [ ] Notebook 01 منفذ بالمخرجات.
+- [ ] Notebook 02 منفذ بالمخرجات.
+- [ ] Notebook 03 منفذ بالمخرجات.
+- [ ] Notebook 04 منفذ بالمخرجات.
+- [ ] Notebook 05 منفذ بالمخرجات.
+- [ ] Notebook 99 موجود.
+- [ ] لا توجد أخطاء حمراء محفوظة.
 
-- Notebook 01 منفذ ومرفوع.
-- Notebook 02 منفذ ومرفوع.
-- Notebook 03 منفذ ومرفوع.
-- Notebook 04 منفذ ومرفوع.
-- Notebook 05 منفذ ومرفوع.
-- إجابات الأسئلة الخمسة موجودة في README.
+### 2. الإجابات اليومية
 
-### 2. النتائج
+- [ ] يوجد عنوان `Daily answers | الإجابات اليومية` في README.
+- [ ] توجد إجابة واضحة لكل يوم من 1 إلى 5.
+- [ ] تستند الإجابات إلى نتائج تشغيلك.
 
-قارن الملفات والحالات وعدد الصفوف مع [EXPECTED_RESULTS.md](EXPECTED_RESULTS.md). لا يشترط تطابق زمن التشغيل أو بايتات الصور.
+### 3. النتائج
 
-### 3. المشروع النهائي
+- [ ] قارنت أسماء الملفات وأعداد الصفوف مع [EXPECTED_RESULTS.md](EXPECTED_RESULTS.md).
+- [ ] ملفات CSV وJSON ليست فارغة.
+- [ ] الاحتمالات بين 0 و1.
+- [ ] لا توجد معرفات مكررة في `submission.csv`.
+- [ ] يحتوي `submission.csv` على 2,500 صف.
 
-تأكد من وجود:
+### 4. المشروع النهائي
 
-```text
-submission/submission.csv
-artifacts/final_model/
-artifacts/final_metrics.json
-artifacts/final_policy.json
-reports/MODEL_CARD.md
-reports/ENSEMBLE_DECISION.md
-tamweel/inference.py
-```
+- [ ] `artifacts/final_model/` موجود.
+- [ ] `artifacts/final_metrics.json` موجود.
+- [ ] `artifacts/final_policy.json` موجود.
+- [ ] `reports/MODEL_CARD.md` موجود.
+- [ ] `reports/ENSEMBLE_DECISION.md` موجود.
+- [ ] `tamweel/inference.py` موجود.
 
-لا يوجد عرض تقديمي مطلوب، ولا توجد قوالب يدوية مطلوبة.
+### 5. الأمن
 
-### 4. الأمن
-
-ابحث في المستودع عن:
+تأكد من عدم وجود:
 
 ```text
 sk-
 ghp_
+github_pat_
 AIza
 .env
 password
 token
 ```
 
-وأزل أي سر أو بيانات شخصية قبل التسليم. إذا نُشر مفتاح فعلي، ألغِه وغيرْه؛ لا يكفي حذف الملف.
+إذا نشرت مفتاحًا حقيقيًا، ألغِه وغيرْه فورًا؛ حذف الملف وحده لا يكفي.
 
-### 5. الفحص الآلي
+### 6. الفحص الآلي
 
-1. شغّل [Notebook 99](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/99_final_submission_check.ipynb).
-2. صحح الأخطاء.
+1. شغّل Notebook 99.
+2. صحح كل خطأ مانع.
 3. شغّل `Actions → Final Project Check`.
-4. افتح المستودع من نافذة خاصة.
-5. أرسل الرابط النهائي عبر القناة الخاصة.
+4. تأكد أن الفحص ناجح.
+5. افتح المستودع من نافذة خاصة.
+6. أرسل الرابط النهائي عبر القناة الخاصة.
+
+التقييم الرسمي يتم مرة واحدة؛ لا ترسل المشروع قبل إكمال هذه القائمة.
 
 ## English summary
 
-Verify all five executed notebooks, daily answers, expected output structures, final model files, submission CSV and security. No presentation or manual templates are required. Run Notebook 99 and Final Project Check before the single formal grading.
+Verify the five executed notebooks, five README answers, expected output structure, final model files, submission CSV and security. Run Notebook 99 and the Final Project Check before sending the final repository link.

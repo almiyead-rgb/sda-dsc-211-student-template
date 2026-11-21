@@ -3,99 +3,81 @@
 # SDA-DSC-211 · Advanced Machine Learning Methods
 # أساليب تعلم الآلة المتقدمة
 
-**Tamweel Lite — مشروع يومي متدرج ينتهي بمشروع متكامل**
+**Tamweel Lite — خمسة أيام، خمسة لابات، مشروع واحد متكامل**
 
-[بوابة الدورة](https://almiyead-rgb.github.io/advanced-machine-learning-methods-sda-dsc-211/) · [مسار التعلم اليومي](DAILY_LEARNING_PATH.md) · [النتائج المتوقعة](EXPECTED_RESULTS.md) · [دليل التسليم](SUBMISSION_GUIDE.md)
+[بوابة الدورة](https://almiyead-rgb.github.io/advanced-machine-learning-methods-sda-dsc-211/) · [ابدأ هنا](START_HERE.md) · [مسار الأيام الخمسة](DAILY_LEARNING_PATH.md) · [النتائج المرجعية](EXPECTED_RESULTS.md) · [التسليم](SUBMISSION_GUIDE.md)
 
 </div>
 
 <!-- BILINGUAL:EN -->
 <!-- BILINGUAL:AR -->
 
-## الفكرة الأساسية
+## كيف تعمل الدورة؟
 
-لا توجد قوالب تقارير أو عرض تقديمي إلزامي. يعمل المتدرب كل يوم على جزء واحد من مشروع **Tamweel Lite** داخل Google Colab، ثم يرفع في اليوم نفسه:
+تبني مشروع **Tamweel Lite** تدريجيًا. في كل يوم تتعلم مفهومًا، وتشغّل لابًا على Google Colab، وتقارن مخرجاتك بالنتائج المرجعية، وتجيب عن سؤال واحد، ثم ترفع عمل اليوم إلى مستودعك في GitHub.
 
-1. دفتر اليوم بعد تنفيذ `Run all`.
-2. ملفات النتائج التي أنشأها الكود.
-3. إجابة قصيرة عن سؤال اليوم داخل `README.md` في مستودعه.
+```text
+تعلم → شغّل Colab → قارن النتائج → أجب → ارفع يوميًا
+                                      ↓
+                       مشروع متكامل في اليوم الخامس
+                                      ↓
+                         Notebook 99 → التسليم النهائي
+```
 
-في اليوم الخامس يجمع الكود المراحل السابقة ويصدر النموذج النهائي وملف التنبؤات والحزمة المتكاملة. بعد ذلك يشغّل المتدرب دفتر الفحص 99 مرة واحدة قبل التسليم النهائي.
+## قبل اليوم الأول
 
-## Simple learning model | نموذج التعلم المبسط
+1. أنشئ مستودعًا عامًا باسم `SDA-DSC-211-StudentCode`.
+2. أضف ملف `README.md`.
+3. شغّل [Notebook 00](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/00_readiness_check.ipynb).
+4. استخدم CPU المجاني، ولا تربط Colab بحساب GitHub ولا تستخدم Token.
+5. اقرأ [دليل الاستعداد](READINESS_GUIDE.md).
 
-| Day | Lab | What you build | سؤال التسليم اليومي |
+## رحلة الأيام الخمسة
+
+| اليوم | اللاب | ما تبنيه | سؤال اليوم |
 |---:|---|---|---|
-| 0 | [Readiness Notebook](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/00_readiness_check.ipynb) | فحص البيئة والحسابات والملفات | هل بيئتك جاهزة دون أخطاء حمراء؟ |
-| 1 | [Colab 01](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/01_baseline_boosting.ipynb) | مقارنة Logistic Regression وXGBoost وLightGBM | أي نموذج اخترت مبدئيًا، وما الدليل الأقوى من نتائجك؟ |
-| 2 | [Colab 02](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/02_validation_tuning.ipynb) | تحقق زمني ومنع التسرب وضبط محدود | ما مثال التسرب الذي اكتشفته، وكيف منعته؟ |
-| 3 | [Colab 03](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/03_cost_sensitive_decision.ipynb) | عتبة قرار تراعي التكلفة والسعة | لماذا لا تكفي العتبة 0.5 دائمًا؟ |
-| 4 | [Colab 04](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/04_explain_calibrate.ipynb) | تفسير النموذج ومعايرة الاحتمالات | ما أهم خاصية في تفسيرك، وما الحد الذي يمنعك من اعتبارها سببًا؟ |
-| 5 | [Colab 05](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/05_final_model.ipynb) | اختيار النموذج النهائي وتصدير المشروع | لماذا اخترت النموذج الفردي أو التجميع في النسخة النهائية؟ |
+| 1 | [Notebook 01](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/01_baseline_boosting.ipynb) | مقارنة Logistic Regression وXGBoost وLightGBM | أي نموذج اخترت، وما الدليل الأقوى من نتائجك؟ |
+| 2 | [Notebook 02](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/02_validation_tuning.ipynb) | تحقق زمني ومنع التسرب وضبط محدود | ما التسرب الذي اكتشفته، وكيف منعته؟ |
+| 3 | [Notebook 03](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/03_cost_sensitive_decision.ipynb) | عتبة قرار تراعي التكلفة والسعة | لماذا لا تكفي العتبة 0.5 دائمًا؟ |
+| 4 | [Notebook 04](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/04_explain_calibrate.ipynb) | تفسير النموذج ومعايرة الاحتمالات | ما أهم خاصية، ولماذا لا تثبت السببية؟ |
+| 5 | [Notebook 05](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/05_final_model.ipynb) | اختيار النموذج النهائي وتصدير المشروع | لماذا اخترت النموذج الفردي أو التجميع؟ |
 
-## خطوات كل يوم
+## المطلوب في نهاية كل يوم
 
-1. افتح لاب اليوم في Colab.
-2. اختر CPU المجاني ثم `Runtime → Run all`.
-3. لا تعدّل الكود قبل نجاح التشغيل الأول.
-4. قارن نتائجك بصفحة [النتائج المتوقعة](EXPECTED_RESULTS.md).
-5. نزّل الدفتر المنفذ وملفات النتائج.
-6. ارفعها إلى مستودعك في اليوم نفسه.
-7. أضف إجابة سؤال اليوم في `README.md` تحت عنوان `Daily answers | الإجابات اليومية`.
-8. تأكد من أن الملفات تفتح من نافذة خاصة.
-
-## Daily submission | التسليم اليومي
-
-يرسل المتدرب عبر القناة المعتمدة:
+- Notebook اليوم بعد `Runtime → Run all`، محفوظًا بالمخرجات ومن دون أخطاء حمراء.
+- ملفات النتائج الرئيسة المحددة في [مسار التعلم اليومي](DAILY_LEARNING_PATH.md).
+- إجابة سؤال اليوم داخل `README.md` تحت عنوان:
 
 ```text
-الاسم:
-رمز المتدرب:
-اليوم:
-رابط مستودع GitHub:
-رابط Notebook اليوم:
+## Daily answers | الإجابات اليومية
 ```
 
-لا تمنح التسليمات اليومية درجة مستقلة، لكنها تدخل ضمن اكتمال المتطلبات الإدارية للمشروع.
+- إرسال رابط المستودع ورابط Notebook اليوم عبر القناة المعتمدة.
 
-## Final project | المشروع النهائي
+## المشروع النهائي
 
-بنهاية اليوم الخامس يجب أن يحتوي المستودع على:
+ينتج اليوم الخامس النموذج النهائي وملف `submission/submission.csv` وتقارير الكود وحزمة المشروع. بعد رفع الحزمة إلى GitHub:
 
-```text
-README.md
-notebooks/01_baseline_boosting.ipynb
-notebooks/02_validation_tuning.ipynb
-notebooks/03_cost_sensitive_decision.ipynb
-notebooks/04_explain_calibrate.ipynb
-notebooks/05_final_model.ipynb
-notebooks/99_final_submission_check.ipynb
-artifacts/
-reports/MODEL_CARD.md
-reports/ENSEMBLE_DECISION.md
-submission/submission.csv
-tamweel/inference.py
-```
+1. راجع [النتائج المرجعية](EXPECTED_RESULTS.md).
+2. أكمل [قائمة الفحص النهائي](FINAL_CHECK_GUIDE.md).
+3. شغّل [Notebook 99](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/99_final_submission_check.ipynb).
+4. شغّل `Actions → Final Project Check`.
+5. أرسل رابط المستودع النهائي مرة واحدة عبر القناة الخاصة.
 
-ملفات `MODEL_CARD.md` و`ENSEMBLE_DECISION.md` تنتجها اللابات؛ لا توجد قوالب منفصلة يعبئها المتدرب.
+## التقييم والشهادة
 
-## Final check | الفحص النهائي
-
-1. أكمل الأيام الخمسة وتسليماتها.
-2. افتح [Notebook 99](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/99_final_submission_check.ipynb).
-3. صحح أي مشكلة قبل التسليم؛ التصحيح الرسمي للمشروع يتم مرة واحدة.
-4. شغّل **Actions → Final Project Check**.
-5. سلّم رابط المستودع عبر القناة الخاصة المعتمدة.
-
-## Assessment and certificate | التقييم والشهادة
-
-- المشروع يقيم من **100 درجة** وفق المتطلبات التقنية والإدارية.
+- المشروع من **100 درجة**: 80 تقنية و20 إدارية.
+- حد الاجتياز **70 من 100**.
 - الحضور شرط مستقل لاستحقاق الشهادة.
-- من يستوفي الحضور، ويسلم المشروع، ويحصل على **70 فأعلى** يحصل على **شهادة اجتياز من سدايا**.
-- من يستوفي الحضور دون مشروع، أو يحصل على أقل من 70، يحصل على **شهادة حضور فقط من سدايا**.
+- استيفاء الحضور + مشروع بدرجة 70 فأعلى = **شهادة اجتياز من سدايا**.
+- استيفاء الحضور دون مشروع، أو بدرجة أقل من 70 = **شهادة حضور فقط من سدايا**.
 
-راجع [سلم التقييم](RUBRIC.md) و[المتطلبات الإدارية](ADMINISTRATIVE_REQUIREMENTS.md).
+راجع [سلم التقييم](RUBRIC.md).
 
-> البيانات اصطناعية. يمنع رفع كلمات المرور أو Tokens أو مفاتيح API أو بيانات شخصية أو بيانات جهة عمل حقيقية.
+## الأمن والخصوصية
 
-Prepared and delivered by **Meaad Al-Marri | ميعاد المري**.
+يمنع رفع كلمات المرور، وGitHub Tokens، ومفاتيح API، وملفات `.env`، وأرقام الهوية، والبيانات الشخصية، أو أي بيانات حقيقية لعملاء أو جهات عمل.
+
+## English summary
+
+Complete one Colab lab each day, compare your generated outputs with the reference page, answer one short question in README, and upload the executed notebook and key files on the same day. Day 5 exports the integrated project. Run Notebook 99 and the Final Project Check before the single final submission.

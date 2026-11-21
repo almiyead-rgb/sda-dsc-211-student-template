@@ -3,40 +3,45 @@
 <!-- BILINGUAL:EN -->
 <!-- BILINGUAL:AR -->
 
-## السياسة المبسطة
+## نوعا التسليم
 
-يبني المتدرب مشروعًا واحدًا خلال خمسة أيام. يوجد **تسليم متابعة يومي**، ثم **تسليم نهائي واحد للتقييم**. لا توجد قوالب تقارير أو عرض تقديمي إلزامي.
+يوجد نوعان فقط:
+
+1. **تسليم يومي للمتابعة:** يثبت أنك أنجزت مرحلة اليوم.
+2. **تسليم نهائي للتقييم:** يُقيّم المشروع المتكامل مرة واحدة.
 
 ## التسليم اليومي
 
-في نهاية كل يوم أرسل عبر القناة المعتمدة:
+بعد إكمال لاب اليوم، ارفع:
+
+- Notebook اليوم منفذًا بالمخرجات.
+- ملفات النتائج الرئيسة.
+- إجابة سؤال اليوم في README.
+
+ثم أرسل:
 
 ```text
 الاسم:
 رمز المتدرب:
 اليوم:
-رابط المستودع:
+رابط مستودع GitHub:
 رابط Notebook اليوم:
 ```
 
-ويجب أن يكون قد رُفع إلى GitHub:
-
-1. Notebook اليوم بعد `Run all`.
-2. ملفات النتائج الأساسية المحددة في [مسار التعلم اليومي](DAILY_LEARNING_PATH.md).
-3. إجابة سؤال اليوم داخل README.
-
-التسليم اليومي يستخدم للتحقق من التقدم واكتشاف المشكلة مبكرًا. لا يمثل تصحيحًا نهائيًا ولا يمنح درجة مستقلة.
+التسليم اليومي لا يمنح درجة مستقلة ولا يمثل تصحيحًا نهائيًا.
 
 ## التسليم النهائي
 
 بعد اليوم الخامس:
 
-1. تأكد من اكتمال تسليمات الأيام الخمسة.
-2. قارن النتائج مع [EXPECTED_RESULTS.md](EXPECTED_RESULTS.md).
-3. شغّل Notebook 99 مرة واحدة.
-4. صحح جميع المشكلات قبل الإرسال؛ التصحيح الرسمي يتم مرة واحدة.
-5. شغّل Final Project Check في GitHub Actions.
-6. أرسل رابط المستودع النهائي عبر القناة الخاصة.
+1. فك ضغط `submission/project_bundle.zip` وارفع محتوياته مع المحافظة على المجلدات.
+2. تأكد من اكتمال الدفاتر 01–05 وإجابات الأيام الخمسة.
+3. قارن الملفات مع [النتائج المرجعية](EXPECTED_RESULTS.md).
+4. شغّل [Notebook 99](https://colab.research.google.com/github/almiyead-rgb/sda-dsc-211-student-template/blob/main/notebooks/99_final_submission_check.ipynb).
+5. صحح جميع المشكلات قبل الإرسال.
+6. شغّل `Actions → Final Project Check`.
+7. افتح المستودع من نافذة خاصة.
+8. أرسل رابط المستودع النهائي عبر القناة الخاصة.
 
 ## الحد الأدنى للمشروع النهائي
 
@@ -56,18 +61,22 @@ artifacts/final_model/
 tamweel/inference.py
 ```
 
-## لا يطلب من المتدرب
+## بيانات رسالة التسليم النهائي
 
-- إعداد عرض تقديمي.
-- تعبئة قوالب تقارير منفصلة.
-- ربط Colab بحساب GitHub.
-- منح Colab Token أو صلاحية وصول.
-- شراء اشتراك أو استخدام GPU.
+```text
+الاسم:
+رمز المتدرب:
+رابط مستودع GitHub النهائي:
+```
 
-## Security | الأمن
+## تنبيهات
 
-يمنع رفع كلمات المرور أو API Keys أو GitHub Tokens أو ملفات `.env` أو بيانات شخصية أو بيانات جهة عمل حقيقية.
+- لا ترسل ZIP وحده؛ فك الضغط وارفع الملفات.
+- لا ترسل صورًا بدل Notebook والملفات الأصلية.
+- لا تجعل المستودع Private.
+- لا تعدّل `submission.csv` يدويًا.
+- لا ترفع كلمات مرور أو مفاتيح أو بيانات شخصية.
 
 ## English summary
 
-Upload the executed notebook, key generated outputs and one short README answer at the end of each day. On Day 5, export the integrated project, run Notebook 99 and GitHub Final Project Check, then submit the repository once for formal grading.
+Upload daily work for progress tracking. After Day 5, extract the project bundle, upload the complete repository, run Notebook 99 and the Final Project Check, then submit the repository link once for formal grading.
