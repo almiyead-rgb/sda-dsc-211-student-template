@@ -5,6 +5,8 @@
   "include": [
     "README.md",
     "START_HERE.md",
+    "DAILY_LEARNING_PATH.md",
+    "EXPECTED_RESULTS.md",
     "READINESS_GUIDE.md",
     "COLAB_GUIDE.md",
     "GITHUB_GUIDE.md",
@@ -29,7 +31,6 @@
     "data/**",
     "notebooks/*.ipynb",
     "reports/**",
-    "presentation/**",
     "tamweel/**",
     "scripts/**",
     ".github/workflows/**"
