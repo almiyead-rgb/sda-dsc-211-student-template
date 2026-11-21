@@ -1,8 +1,4 @@
-"""Execute every lab in a fresh kernel and workspace.
-
-The runner verifies technical execution only. Daily learner answers are checked in
-README by the final submission validator; they no longer block notebook execution.
-"""
+"""Execute each lab in a fresh kernel/workspace; original learner files are read only."""
 import argparse
 from pathlib import Path
 import json
@@ -23,17 +19,15 @@ def worker(source, output, strict):
         notebook = nbformat.read(source, as_version=4)
         adapted = 0
         for cell in notebook.cells:
-            if cell.cell_type != 'code':
-                continue
-            lines = cell.source.splitlines()
-            for index, line in enumerate(lines):
-                if line.startswith('ROOT = ') and 'TAMWEEL_PROJECT_DIR' in line:
-                    lines[index] = 'ROOT = Path(os.environ["TAMWEEL_PROJECT_DIR"]).resolve()'
-                    adapted += 1
-            cell.source = '\n'.join(lines)
+            if cell.cell_type == 'code':
+                lines = cell.source.splitlines()
+                for i, line in enumerate(lines):
+                    if line.startswith('ROOT = ') and 'TAMWEEL_PROJECT_DIR' in line:
+                        lines[i] = 'ROOT = Path(os.environ["TAMWEEL_PROJECT_DIR"]).resolve()'
+                        adapted += 1
+                cell.source = '\n'.join(lines)
         if adapted != 1:
             raise ValueError('Expected exactly one documented workspace setting in the notebook.')
-
         os.environ.update(
             ASSESSMENT_MODE='1',
             TAMWEEL_PROJECT_DIR=str(work),
@@ -50,25 +44,27 @@ def worker(source, output, strict):
         ).execute()
 
         technical_complete = True
-        technical_status = 'READINESS_COMPLETE'
+        checkpoint_status = 'NOT_APPLICABLE'
         if source.name[:2] != '00':
             day = int(source.name[:2])
             run_record = json_read(work / f'artifacts/day{day}_run.json')
-            technical_status = run_record.get('technical_status')
-            technical_complete = technical_status == 'TECHNICAL_READY'
-            if not technical_complete:
-                raise ValueError('Live technical computation is incomplete; recovery output is not final evidence.')
+            if run_record.get('technical_status') != 'TECHNICAL_READY':
+                raise ValueError('Live computation required; technical status is not ready.')
+            reflection_path = work / f'artifacts/day{day}_reflection.json'
+            if reflection_path.is_file():
+                reflection = json_read(reflection_path)
+                checkpoint_status = reflection.get('checkpoint', {}).get('status', 'NOT_RECORDED')
 
         result = {
             'status': 'PASS' if technical_complete else 'FAIL',
             'technical_complete': technical_complete,
             'learner_complete': technical_complete,
-            'technical_status': technical_status,
+            'legacy_reflection_status': checkpoint_status,
             'seconds': round(time.perf_counter() - started, 2),
             'source_sha256': digest(source),
             'workspace_adapter': 'Only ROOT redirected to a fresh temporary workspace.',
             'code_cells': sum(cell.cell_type == 'code' for cell in notebook.cells),
-            'answer_scope': 'Daily answers are reviewed from README, not required for code execution.',
+            'daily_answer_scope': 'The required learner answer is stored in repository README, not legacy reflection fields.',
         }
         output.write_text(json.dumps(result, indent=2), encoding='utf-8')
 
@@ -78,14 +74,13 @@ def run(root, output, strict=False):
     output.mkdir(parents=True, exist_ok=True)
     before = inventory_digest(inventory(root))
     results = []
-
     for name in NOTEBOOKS:
-        notebook_path = f'notebooks/{name}.ipynb'
+        path = f'notebooks/{name}.ipynb'
         result_path = output / f'{name}.json'
         command = [
             sys.executable,
             str(Path(__file__).resolve()),
-            '--worker', str(root / notebook_path),
+            '--worker', str(root / path),
             '--output', str(result_path),
         ]
         if strict:
@@ -106,24 +101,25 @@ def run(root, output, strict=False):
                 'status': 'FAIL',
                 'technical_complete': False,
                 'learner_complete': False,
-                'detail': 'Notebook exceeded the six-minute limit.',
+                'detail': 'Notebook exceeded six-minute limit.',
             }
         else:
             (output / f'{name}.log').write_text(
                 completed.stdout + '\n' + completed.stderr,
                 encoding='utf-8',
             )
-            if completed.returncode == 0 and result_path.exists():
-                result = json_read(result_path)
-            else:
-                result = {
+            result = (
+                json_read(result_path)
+                if completed.returncode == 0 and result_path.exists()
+                else {
                     'status': 'FAIL',
                     'technical_complete': False,
                     'learner_complete': False,
                     'detail': 'See notebook log.',
                 }
-        results.append({'notebook': notebook_path, **result})
-        print(f"{notebook_path}: {result['status']} ({time.perf_counter() - started:.1f}s)", flush=True)
+            )
+        results.append({'notebook': path, **result})
+        print(f"{path}: {result['status']} ({time.perf_counter() - started:.1f}s)", flush=True)
 
     unchanged = before == inventory_digest(inventory(root))
     report = {
@@ -135,7 +131,7 @@ def run(root, output, strict=False):
         'notebooks': results,
         'scope': (
             'Fresh kernels and workspaces, one notebook at a time. '
-            'Daily README answers and grading remain separate.'
+            'This is a technical check; five daily answers are verified separately in README.'
         ),
     }
     (output / 'notebook_run.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
