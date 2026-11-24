@@ -18,23 +18,14 @@ REQUIRED_PAIRS = {
     "final_check_save",
 }
 REQUIRED_CODE_SIGNALS = {
-    "PROJECT_REPOSITORY",
-    "PROJECT_SHA",
-    "PROJECT_ZIP",
-    "CHECK_REVISION",
-    "CHECK_HASHES",
-    "ASSESSMENT_MODE",
-    "extract_project",
-    "100*1024*1024",
-    "scripts/final_check.py",
-    "self_check_report.json",
-    "final_project_bundle.zip",
-    "files.download",
+    "PROJECT_URL", "PROJECT_ZIP", "zipfile.ZipFile", "MAX_ZIP",
+    "codeload.github.com", "review(snapshot)", "submission/submission.csv",
+    "tamweel_lite_self_check.json", "SELF_CHECK_COMPLETE",
 }
 FORBIDDEN_SIGNALS = {
-    "drive.mount",
-    "getpass.getpass",
-    "GITHUB_TOKEN",
+    "drive.mount", "getpass.getpass", "GITHUB_TOKEN", "subprocess.",
+    "os.system", "scripts/final_check.py", "CHECK_REVISION",
+    "final_presentation.pdf", "final-submission",
 }
 
 
